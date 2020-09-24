@@ -26,7 +26,7 @@ ccbio <-
   mutate(subregion = str_to_title(subregion),
          ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
          ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
-         dop_nice = factor(dop, labels = c("Sep-15", "Oct-7", "Nov-1")),
+         dop_nice = factor(dop, labels = c("Sep-15 (Early)", "Oct-7 (Expected)", "Nov-1 (Late)")),
          dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1")),
          dot_nicerev = fct_rev(dot_nice)
   ) 
@@ -54,14 +54,17 @@ ui <- fluidPage(
        
         
         fluidRow(
-          column(3,
+          column(4,
                  selectizeInput(inputId = "county", 
                                 label = "Choose a county:",
                                 selected = "Story",
-                                choices = dd_county)),
-          column(9, 
-                 plotOutput('fig_map', width = 400, height = 350))
-          
+                                choices = dd_county),
+                 includeMarkdown("desc.md")),
+          column(8, 
+                 plotOutput('fig_map', width = 400, height = 350)),
+          # column(4, 
+          #        includeMarkdown("desc.md"))
+          # 
           
         ), 
         
@@ -106,7 +109,7 @@ server <- function(input, output) {
                          fill = "gray80", color = "white", lwd = 0.5) + 
             geom_polygon(data = dataset1(),
                          aes(x=long, y = lat, group = group),
-                         color = "mediumseagreen", #seagreen springgreen4
+                         color = "black", # "mediumseagreen", #seagreen springgreen4
                          fill = "gold1",
                          lwd = 1.5) +
         ggthemes::theme_few() + 
@@ -132,8 +135,8 @@ server <- function(input, output) {
         scale_fill_viridis_c(option = "C") +
         facet_grid(.~dop_nice, scales = "free") + 
         labs(x = "Cover Crop Biomass (lbs/ac)",
-             y = "Termination Date",
-             title = "Planting Date") +
+             y = "Termination Date") +
+        guides(fill = F) +
         theme(axis.title = element_text(size = rel(2.5)),
               axis.text.x = element_text(size = rel(2.3)),
               axis.text.y = element_text(size = rel(2.5)),
