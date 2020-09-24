@@ -22,7 +22,7 @@ library(shinythemes)
 
 #--for running with 'run app'
 ccbio <- 
-  read_csv("../create_shiny_data/IA_ccbio-map-raws.csv") %>% 
+  read_csv("IA_ccbio-map-raws.csv") %>% 
   mutate(subregion = str_to_title(subregion),
          ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
          ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
