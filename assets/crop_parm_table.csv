@@ -1,0 +1,11 @@
+SpeciesID,Species_name,Parm,Value,Min,Max,optim
+RY,Winter Rye,LAImax,3,2,4,TRUE
+RY,Winter Rye,relLAI_P1,0.01,0.01,0.15,FALSE
+RY,Winter Rye,relLAI_P2,0.9,0.8,0.99,FALSE
+RY,Winter Rye,relTT_P1,0.25,0.05,0.45,TRUE
+RY,Winter Rye,relTT_P2,0.5,0.45,0.5,TRUE
+RY,Winter Rye,relTT_Sn,0.5,0.5,0.85,TRUE
+RY,Winter Rye,RUEmax,2,0,3.5,TRUE
+RY,Winter Rye,TbaseDev,0,0,8,FALSE
+RY,Winter Rye,ToptDev,15,12,22,FALSE
+RY,Winter Rye,TTtoMatr,1800,1200,2500,TRUE

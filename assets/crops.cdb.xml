@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CDB>
+	<Complex_Species>
+		<Species SpeciesID="AL" Species="Alfalfa/Lucerna" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="Y" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="AR" Species="Aroid" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="BA" Species="Barley" LEtg="0.5" TbaseD="0" ToptD="26" ToptP="15" RUE="2.9" LEsec="3.5" lncsf="0.45" SLWmax="0.0045" Phase3="4.1" LEear="4.1" Kf="1.668" glfmat="0" EmgInt="0.3" EmgSlp="0.1" PhotoC="0.01" Nfixing="N" PARtK="" PARtE="" PhotoSynID="C3" CHeight="1">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="0"/>
+				<Factor TRF="Grain Growth" X="-99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="0" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="8" Y="0"/>
+				<Factor TRF="Grain Growth" X="8" Y="0"/>
+				<Factor TRF="Grain Growth" X="20" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="21" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="25" Y="1"/>
+				<Factor TRF="Grain Growth" X="30" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="30" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="34" Y="1"/>
+				<Factor TRF="Grain Growth" X="35" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="35" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="41" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="0"/>
+				<Factor TRF="Grain Growth" X="99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="0"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="BN" Species="Dry bean (Phaseolous bean)" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="Y" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="BW" Species="Broad leaf weeds" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0.25">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="CO" Species="Cotton" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="CS" Species="Cassava" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="FA" Species="Fallow" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="GW" Species="Grass-weeds" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0.25">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="ML" Species="Pearl millet" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="C4" CHeight="1.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="MZ" Species="Maize/Corn" LEtg="0.5" TbaseD="8" ToptD="32" ToptP="25" RUE="4.5" LEsec="10.5" lncsf="0.5" SLWmax="0.006" Phase3="5.8" LEear="6.2" Kf="1.668" glfmat="0.3" EmgInt="0.3" EmgSlp="0.1" PhotoC="0" Nfixing="N" PARtK="11" PARtE="10" PhotoSynID="C4" CHeight="1.5">
+			<Phases>
+				<Phase Label="L01" PhylF="0.39" Tswch="C" TopSk="0.56" Slwf="0.56" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.33" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L02" PhylF="0.76" Tswch="C" TopSk="0.8" Slwf="0.58" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.31" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L03" PhylF="1" Tswch="A" TopSk="1.11" Slwf="0.6" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.31" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L04" PhylF="1" Tswch="A" TopSk="1.53" Slwf="0.66" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.3" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L05" PhylF="1" Tswch="A" TopSk="2.08" Slwf="0.73" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.29" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L06" PhylF="1" Tswch="A" TopSk="2.78" Slwf="0.79" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.29" ResF="0.15" MxTiS="0" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L07" PhylF="1" Tswch="A" TopSk="3.65" Slwf="0.86" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.28" ResF="0.15" MxTiS="0" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L08" PhylF="1" Tswch="A" TopSk="4.73" Slwf="0.93" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.27" ResF="0.15" MxTiS="0" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L09" PhylF="1" Tswch="A" TopSk="6.02" Slwf="1" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.27" ResF="0.15" MxTiS="0" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L10" PhylF="1" Tswch="A" TopSk="7.55" Slwf="1.06" LeafF="0.61" StemF="0.38" GRF="0" RTF="0.26" ResF="0.15" MxTiS="0" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L11" PhylF="1" Tswch="A" TopSk="9.32" Slwf="1.13" LeafF="0.53" StemF="0.46" GRF="0" RTF="0.25" ResF="0.15" MxTiS="0" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L12" PhylF="1" Tswch="A" TopSk="11.34" Slwf="1.2" LeafF="0.45" StemF="0.55" GRF="0" RTF="0.25" ResF="0.15" MxTiS="0" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L13" PhylF="1" Tswch="A" TopSk="13.57" Slwf="1.26" LeafF="0.36" StemF="0.63" GRF="0" RTF="0.24" ResF="0.15" MxTiS="0" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L14" PhylF="1" Tswch="A" TopSk="15.99" Slwf="1.33" LeafF="0.28" StemF="0.71" GRF="0" RTF="0.23" ResF="0.15" MxTiS="0" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L15" PhylF="1" Tswch="A" TopSk="18.54" Slwf="1.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.23" ResF="0.15" MxTiS="0" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L16" PhylF="1" Tswch="A" TopSk="21.18" Slwf="1.46" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.22" ResF="0.15" MxTiS="0" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L17" PhylF="1" Tswch="A" TopSk="23.81" Slwf="1.53" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.21" ResF="0.15" MxTiS="0" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L18" PhylF="1" Tswch="A" TopSk="26.36" Slwf="1.6" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.21" ResF="0.15" MxTiS="0" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L19" PhylF="1" Tswch="A" TopSk="28.72" Slwf="1.66" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L20" PhylF="1" Tswch="A" TopSk="30.81" Slwf="1.73" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L21" PhylF="1" Tswch="A" TopSk="32.55" Slwf="1.8" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L22" PhylF="1" Tswch="A" TopSk="33.84" Slwf="1.86" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L23" PhylF="1" Tswch="A" TopSk="34.64" Slwf="1.93" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L24" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L25" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.06" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L26" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.13" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L27" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.2" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L28" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.26" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L29" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.33" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L30" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L31" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L32" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L33" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L34" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L35" PhylF="1" Tswch="A" TopSk="34.64" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="FL-05" PhylF="0" Tswch="A" TopSk="34.64" Slwf="1.2" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-04" PhylF="0" Tswch="A" TopSk="34.64" Slwf="1.14" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-03" PhylF="0" Tswch="A" TopSk="34.64" Slwf="1.07" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-02" PhylF="0" Tswch="A" TopSk="34.64" Slwf="1.01" LeafF="0.15" StemF="0.85" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-01" PhylF="0" Tswch="A" TopSk="34.64" Slwf="0.95" LeafF="0.1" StemF="0.9" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-00" PhylF="0" Tswch="A" TopSk="34.64" Slwf="0.88" LeafF="0.05" StemF="0.95" GRF="0" RTF="0.2" ResF="0.15" MxTiS="0" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="EG0.0" PhylF="0" Tswch="A" TopSk="34.64" Slwf="0" LeafF="0" StemF="1" GRF="0" RTF="0.45" ResF="0.45" MxTiS="0" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="EG0.25" PhylF="0" Tswch="A" TopSk="34.64" Slwf="0" LeafF="0" StemF="1" GRF="0" RTF="0.45" ResF="0.45" MxTiS="0" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="EG1.0" PhylF="0" Tswch="A" TopSk="34.64" Slwf="0" LeafF="0" StemF="1" GRF="0" RTF="0.45" ResF="0.45" MxTiS="0" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="GG0.0" PhylF="0" Tswch="A" TopSk="0" Slwf="0" LeafF="0" StemF="0" GRF="1" RTF="0.09" ResF="0.45" MxTiS="0" RlNVg="0.2" RlNKr="1" RlPVg="0.2" RlPKr="1"/>
+				<Phase Label="GG0.5" PhylF="0" Tswch="A" TopSk="0" Slwf="0" LeafF="0" StemF="0" GRF="1" RTF="0.09" ResF="0.45" MxTiS="0" RlNVg="0.1" RlNKr="1" RlPVg="0.1" RlPKr="1"/>
+				<Phase Label="GG1.0" PhylF="0" Tswch="A" TopSk="0" Slwf="0" LeafF="0" StemF="0" GRF="1" RTF="0.09" ResF="0.25" MxTiS="0" RlNVg="0.1" RlNKr="1" RlPVg="0.1" RlPKr="1"/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="0"/>
+				<Factor TRF="Grain Growth" X="-99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="0" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="8" Y="0"/>
+				<Factor TRF="Grain Growth" X="8" Y="0"/>
+				<Factor TRF="Grain Growth" X="20" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="21" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="25" Y="1"/>
+				<Factor TRF="Grain Growth" X="30" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="30" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="34" Y="1"/>
+				<Factor TRF="Grain Growth" X="35" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="35" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="41" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="0"/>
+				<Factor TRF="Grain Growth" X="99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="0"/>
+			</TempFactors>
+			<Cultivars>
+				<Cultivar CultivarID="IB0073" Name="Dekalb 31" Vcoef="0" LT50c="0" PhLow="12.5" PhHig="20" DelpH="0.79" LEJuv="2" KrNPt="830" KrSEf="0.03" BrnCo="0.11" Prolf="True" EaNPt="" EaSEf="1" LEgg="12" krPGR="0.01" phyll="52" Phy14="0" MxNVg="0.05" MxNKr="0.05" MnNMlt="0.8" MxPVg="0.2" MxPKr="0.2" MnPMlt="0.2"/>
+				<Cultivar CultivarID="IB0068" Name="Dekalb 591" Vcoef="0" LT50c="0" PhLow="12.5" PhHig="20" DelpH="0.79" LEJuv="5" KrNPt="810" KrSEf="0.03" BrnCo="0.11" Prolf="True" EaNPt="" EaSEf="1" LEgg="11" krPGR="0.0075" phyll="52" Phy14="0" MxNVg="0.2" MxNKr="0.2" MnNMlt="0.2" MxPVg="0.2" MxPKr="0.2" MnPMlt="0.2"/>
+				<Cultivar CultivarID="IB0069" Name="Dekalb 31" Vcoef="0" LT50c="0" PhLow="12.5" PhHig="20" DelpH="0.79" LEJuv="2" KrNPt="810" KrSEf="0.03" BrnCo="0.11" Prolf="True" EaNPt="" EaSEf="1" LEgg="8" krPGR="0.008" phyll="52" Phy14="0" MxNVg="0.2" MxNKr="0.2" MnNMlt="0.2" MxPVg="0.2" MxPKr="0.2" MnPMlt="0.2"/>
+				<Cultivar CultivarID="IB0070" Name="Dekalb 491" Vcoef="0" LT50c="0" PhLow="12.5" PhHig="20" DelpH="0.79" LEJuv="2" KrNPt="810" KrSEf="0.03" BrnCo="0.11" Prolf="True" EaNPt="" EaSEf="1" LEgg="8" krPGR="0.008" phyll="52" Phy14="0" MxNVg="0.2" MxNKr="0.2" MnNMlt="0.2" MxPVg="0.2" MxPKr="0.2" MnPMlt="0.2"/>
+				<Cultivar CultivarID="IB0071" Name="Pioneer Med-Low Yield" Vcoef="0" LT50c="0" PhLow="12.5" PhHig="20" DelpH="0.79" LEJuv="3" KrNPt="810" KrSEf="0.03" BrnCo="0.11" Prolf="True" EaNPt="" EaSEf="1" LEgg="9" krPGR="0.008" phyll="52" Phy14="0" MxNVg="0.05" MxNKr="0.05" MnNMlt="0.4" MxPVg="0.2" MxPKr="0.2" MnPMlt="0.2"/>
+				<Cultivar CultivarID="IB0072" Name="Pioneer Low Yield" Vcoef="0" LT50c="0" PhLow="12.5" PhHig="20" DelpH="0.79" LEJuv="4" KrNPt="810" KrSEf="0.03" BrnCo="0.11" Prolf="True" EaNPt="" EaSEf="1" LEgg="10" krPGR="0.008" phyll="52" Phy14="0" MxNVg="0.05" MxNKr="0.05" MnNMlt="0.4" MxPVg="0.2" MxPKr="0.2" MnPMlt="0.2"/>
+				<Cultivar CultivarID="IB0067" Name="Pioneer Med-High Yield" Vcoef="0" LT50c="0" PhLow="12.5" PhHig="20" DelpH="0.79" LEJuv="5.5" KrNPt="819" KrSEf="0.04" BrnCo="0.11" Prolf="True" EaNPt="" EaSEf="1" LEgg="14" krPGR="0.009" phyll="52" Phy14="0" MxNVg="0.05" MxNKr="0.05" MnNMlt="0.4" MxPVg="0.2" MxPKr="0.2" MnPMlt="0.2"/>
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="PN" Species="Peanut" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="PT" Species="Potato" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="RI" Species="Rice" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="C3" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="SB" Species="Soybean" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="Y" PARtK="" PARtE="" PhotoSynID="" CHeight="0.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="SC" Species="Sugar cane" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="2">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="SG" Species="Sorghum" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="C4" CHeight="1.5">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="ST" Species="Shrubs/Trees" LEtg="" TbaseD="" ToptD="" ToptP="" RUE="" LEsec="" lncsf="" SLWmax="" Phase3="" LEear="" Kf="" glfmat="" EmgInt="" EmgSlp="" PhotoC="" Nfixing="N" PARtK="" PARtE="" PhotoSynID="" CHeight="2">
+			<Phases>
+				<Phase Label="" PhylF="" Tswch="" TopSk="" Slwf="" LeafF="" StemF="" GRF="" RTF="" ResF="" MxTiS="" RlNVg="" RlNKr="" RlPVg="" RlPKr=""/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="1"/>
+				<Factor TRF="Grain Growth" X="-99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="1"/>
+				<Factor TRF="Grain Growth" X="99" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="1"/>
+			</TempFactors>
+			<Cultivars>&#13;
+			</Cultivars>
+		</Species>
+		<Species SpeciesID="WH" Species="Wheat" LEtg="0.5" TbaseD="0" ToptD="26" ToptP="15" RUE="2.9" LEsec="3.5" lncsf="0.45" SLWmax="0.0045" Phase3="4.1" LEear="4.1" Kf="1.668" glfmat="0" EmgInt="0.3" EmgSlp="0.1" PhotoC="0.007" Nfixing="N" PARtK="11" PARtE="10" PhotoSynID="C3" CHeight="1">
+			<Phases>
+				<Phase Label="L01" PhylF="0.39" Tswch="C" TopSk="0.03" Slwf="0.56" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.33" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L02" PhylF="0.76" Tswch="C" TopSk="0.05" Slwf="0.58" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.31" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L03" PhylF="1" Tswch="A" TopSk="0.1" Slwf="0.6" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.31" ResF="0.15" MxTiS="0" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L04" PhylF="1" Tswch="A" TopSk="0.17" Slwf="0.66" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.3" ResF="0.15" MxTiS="0.92" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L05" PhylF="1" Tswch="A" TopSk="0.3" Slwf="0.73" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.29" ResF="0.15" MxTiS="1.94" RlNVg="1" RlNKr="0" RlPVg="1" RlPKr="0"/>
+				<Phase Label="L06" PhylF="1" Tswch="A" TopSk="0.49" Slwf="0.79" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.29" ResF="0.15" MxTiS="3.48" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L07" PhylF="1" Tswch="A" TopSk="0.78" Slwf="0.86" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.28" ResF="0.15" MxTiS="6" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L08" PhylF="1" Tswch="A" TopSk="1.19" Slwf="0.93" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.27" ResF="0.15" MxTiS="9.93" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L09" PhylF="1" Tswch="A" TopSk="1.74" Slwf="1" LeafF="0.7" StemF="0.3" GRF="0" RTF="0.27" ResF="0.15" MxTiS="15.7" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L10" PhylF="1" Tswch="A" TopSk="2.44" Slwf="1.06" LeafF="0.61" StemF="0.38" GRF="0" RTF="0.26" ResF="0.15" MxTiS="23.8" RlNVg="0.9" RlNKr="0" RlPVg="0.9" RlPKr="0"/>
+				<Phase Label="L11" PhylF="1" Tswch="A" TopSk="3.29" Slwf="1.13" LeafF="0.53" StemF="0.46" GRF="0" RTF="0.25" ResF="0.15" MxTiS="34.7" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L12" PhylF="1" Tswch="A" TopSk="4.27" Slwf="1.2" LeafF="0.45" StemF="0.55" GRF="0" RTF="0.25" ResF="0.15" MxTiS="48.9" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L13" PhylF="1" Tswch="A" TopSk="5.32" Slwf="1.26" LeafF="0.36" StemF="0.63" GRF="0" RTF="0.24" ResF="0.15" MxTiS="66.6" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L14" PhylF="1" Tswch="A" TopSk="6.37" Slwf="1.33" LeafF="0.28" StemF="0.71" GRF="0" RTF="0.23" ResF="0.15" MxTiS="88.5" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L15" PhylF="1" Tswch="A" TopSk="7.33" Slwf="1.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.23" ResF="0.15" MxTiS="115" RlNVg="0.8" RlNKr="0" RlPVg="0.8" RlPKr="0"/>
+				<Phase Label="L16" PhylF="1" Tswch="A" TopSk="8.1" Slwf="1.46" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.22" ResF="0.15" MxTiS="146" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L17" PhylF="1" Tswch="A" TopSk="8.61" Slwf="1.53" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.21" ResF="0.15" MxTiS="150" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L18" PhylF="1" Tswch="A" TopSk="9" Slwf="1.6" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.21" ResF="0.15" MxTiS="150" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L19" PhylF="1" Tswch="A" TopSk="9" Slwf="1.66" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L20" PhylF="1" Tswch="A" TopSk="9" Slwf="1.73" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.7" RlNKr="0" RlPVg="0.7" RlPKr="0"/>
+				<Phase Label="L21" PhylF="1" Tswch="A" TopSk="9" Slwf="1.8" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L22" PhylF="1" Tswch="A" TopSk="9" Slwf="1.86" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L23" PhylF="1" Tswch="A" TopSk="9" Slwf="1.93" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L24" PhylF="1" Tswch="A" TopSk="9" Slwf="2" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L25" PhylF="1" Tswch="A" TopSk="9" Slwf="2.06" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.6" RlNKr="0" RlPVg="0.6" RlPKr="0"/>
+				<Phase Label="L26" PhylF="1" Tswch="A" TopSk="9" Slwf="2.13" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L27" PhylF="1" Tswch="A" TopSk="9" Slwf="2.2" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L28" PhylF="1" Tswch="A" TopSk="9" Slwf="2.26" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L29" PhylF="1" Tswch="A" TopSk="9" Slwf="2.33" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L30" PhylF="1" Tswch="A" TopSk="9" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.5" RlNKr="0" RlPVg="0.5" RlPKr="0"/>
+				<Phase Label="L31" PhylF="1" Tswch="A" TopSk="9" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L32" PhylF="1" Tswch="A" TopSk="9" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L33" PhylF="1" Tswch="A" TopSk="9" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L34" PhylF="1" Tswch="A" TopSk="9" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="L35" PhylF="1" Tswch="A" TopSk="9" Slwf="2.4" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.4" RlNKr="0" RlPVg="0.4" RlPKr="0"/>
+				<Phase Label="FL-05" PhylF="0" Tswch="A" TopSk="9" Slwf="1.2" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-04" PhylF="0" Tswch="A" TopSk="9" Slwf="1.14" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-03" PhylF="0" Tswch="A" TopSk="9" Slwf="1.07" LeafF="0.2" StemF="0.8" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-02" PhylF="0" Tswch="A" TopSk="9" Slwf="1.01" LeafF="0.15" StemF="0.85" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-01" PhylF="0" Tswch="A" TopSk="9" Slwf="0.95" LeafF="0.1" StemF="0.9" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.3" RlNKr="0" RlPVg="0.3" RlPKr="0"/>
+				<Phase Label="FL-00" PhylF="0" Tswch="A" TopSk="9" Slwf="0.88" LeafF="0.05" StemF="0.95" GRF="0" RTF="0.2" ResF="0.15" MxTiS="150" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="EG0.0" PhylF="0" Tswch="A" TopSk="9" Slwf="0" LeafF="0" StemF="1" GRF="0" RTF="0.45" ResF="0.45" MxTiS="150" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="EG0.25" PhylF="0" Tswch="A" TopSk="9" Slwf="0" LeafF="0" StemF="1" GRF="0" RTF="0.45" ResF="0.45" MxTiS="150" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="EG1.0" PhylF="0" Tswch="A" TopSk="9" Slwf="0" LeafF="0" StemF="1" GRF="0" RTF="0.45" ResF="0.45" MxTiS="150" RlNVg="0.2" RlNKr="0" RlPVg="0.2" RlPKr="0"/>
+				<Phase Label="GG0.0" PhylF="0" Tswch="A" TopSk="0" Slwf="0" LeafF="0" StemF="0" GRF="1" RTF="0.09" ResF="0.45" MxTiS="150" RlNVg="0.2" RlNKr="1" RlPVg="0.2" RlPKr="1"/>
+				<Phase Label="GG0.5" PhylF="0" Tswch="A" TopSk="0" Slwf="0" LeafF="0" StemF="0" GRF="1" RTF="0.09" ResF="0.45" MxTiS="150" RlNVg="0.1" RlNKr="1" RlPVg="0.1" RlPKr="1"/>
+				<Phase Label="GG1.0" PhylF="0" Tswch="A" TopSk="0" Slwf="0" LeafF="0" StemF="0" GRF="1" RTF="0.09" ResF="0.25" MxTiS="150" RlNVg="0.1" RlNKr="1" RlPVg="0.1" RlPKr="1"/>
+			</Phases>
+			<TempFactors>
+				<Factor TRF="Leaf Expansion" X="-99" Y="0"/>
+				<Factor TRF="Grain Growth" X="-99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="-99" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="0" Y="0"/>
+				<Factor TRF="Grain Growth" X="0" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="0" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="8" Y="1"/>
+				<Factor TRF="Grain Growth" X="8" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="8" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="26" Y="1"/>
+				<Factor TRF="Grain Growth" X="26" Y="1"/>
+				<Factor TRF="Root Depth Growth" X="26" Y="1"/>
+				<Factor TRF="Leaf Expansion" X="35" Y="0"/>
+				<Factor TRF="Grain Growth" X="35" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="35" Y="0"/>
+				<Factor TRF="Leaf Expansion" X="99" Y="0"/>
+				<Factor TRF="Grain Growth" X="99" Y="0"/>
+				<Factor TRF="Root Depth Growth" X="99" Y="0"/>
+			</TempFactors>
+			<Cultivars>
+				<Cultivar CultivarID="IB1020" Name="" Vcoef="" LT50c="" PhLow="" PhHig="" DelpH="" LEJuv="" KrNPt="" KrSEf="" BrnCo="" Prolf="False" EaNPt="" EaSEf="" LEgg="" krPGR="" phyll="" Phy14="" MxNVg="" MxNKr="" MnNMlt="" MxPVg="" MxPKr="" MnPMlt=""/>
+				<Cultivar CultivarID="IB1099" Name="High yielding cultivar for NL" Vcoef="52" LT50c="-28" PhLow="8" PhHig="19" DelpH="-0.93" LEJuv="0" KrNPt="600" KrSEf="0.03" BrnCo="0.11" Prolf="False" EaNPt="150" EaSEf="0.2" LEgg="4.5" krPGR="0.004" phyll="115" Phy14="75" MxNVg="0.2" MxNKr="0.2" MnNMlt="0.6" MxPVg="0.02" MxPKr="0.04" MnPMlt="0.6"/>
+				<Cultivar CultivarID="IB1015" Name="Maris Fundin" Vcoef="52" LT50c="-28" PhLow="8" PhHig="19" DelpH="-0.93" LEJuv="0" KrNPt="600" KrSEf="0.03" BrnCo="0.11" Prolf="False" EaNPt="150" EaSEf="0.2" LEgg="4.5" krPGR="0.004" phyll="115" Phy14="75" MxNVg="0.2" MxNKr="0.2" MnNMlt="0.6" MxPVg="0.02" MxPKr="0.04" MnPMlt="0.6"/>
+			</Cultivars>
+		</Species>
+	</Complex_Species>
+	<Simple_Crop>
+		<Species SpeciesID="AC" Species_Name="Argentine canola" Source="Kiniry et al., 1995" relTT_P1="0.15" relLAI_P1="0.02" relTT_P2="0.45" relLAI_P2="0.95" LAImax="4.5" RUEmax="3.4" relTT_Sn="0.5" SnParLAI="0.15" SnParRUE="0.3" TbaseDev="5" ToptDev="21" TTtoGerm="20" TTtoMatr="1100" EmgInter="15" EmgSlope="6" HrvIndex="0.3" PlntN_Em="0.044" PlntN_Hf="0.0164" PlntN_Mt="0.0128" GrnN_Mt="0.038" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0023" GrnP_Mt="0.0079" Nfixing="N" PhotoSynID="" CHeight="1"/>
+		<Species SpeciesID="AL" Species_Name="Alfalfa/Lucerna" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.01" relTT_P2="0.5" relLAI_P2="0.95" LAImax="5" RUEmax="2" relTT_Sn="0.9" SnParLAI="2" SnParRUE="10" TbaseDev="4" ToptDev="20" TTtoGerm="20" TTtoMatr="950" EmgInter="15" EmgSlope="6" HrvIndex="0.7" PlntN_Em="0.0417" PlntN_Hf="0.029" PlntN_Mt="0.02" GrnN_Mt="0.025" PlntP_Em="0.0035" PlntP_Hf="0.0028" PlntP_Mt="0.002" GrnP_Mt="0.0035" Nfixing="N" PhotoSynID="" CHeight="0.3"/>
+		<Species SpeciesID="AW" Species_Name="Altai wildrye" Source="Kiniry et al., 1995" relTT_P1="0.35" relLAI_P1="0.02" relTT_P2="0.62" relLAI_P2="0.95" LAImax="3" RUEmax="3" relTT_Sn="0.8" SnParLAI="1" SnParRUE="1" TbaseDev="0" ToptDev="15" TTtoGerm="20" TTtoMatr="1400" EmgInter="15" EmgSlope="6" HrvIndex="0.03" PlntN_Em="0.0226" PlntN_Hf="0.018" PlntN_Mt="0.014" GrnN_Mt="0.023" PlntP_Em="0.004" PlntP_Hf="0.004" PlntP_Mt="0.0024" GrnP_Mt="0.0037" Nfixing="N" PhotoSynID="" CHeight="1"/>
+		<Species SpeciesID="BG" Species_Name="Bermudagrass" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.05" relLAI_P1="0.05" relTT_P2="0.49" relLAI_P2="0.95" LAImax="5" RUEmax="3.5" relTT_Sn="0.99" SnParLAI="10" SnParRUE="1" TbaseDev="12" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.01" PlntN_Em="0.06" PlntN_Hf="0.0231" PlntN_Mt="0.0134" GrnN_Mt="0.0234" PlntP_Em="0.0084" PlntP_Hf="0.0032" PlntP_Mt="0.0019" GrnP_Mt="0.0033" Nfixing="N" PhotoSynID="" CHeight="0.2"/>
+		<Species SpeciesID="BS" Species_Name="Spring barley" Source="Kiniry et al., 1995" relTT_P1="0.15" relLAI_P1="0.01" relTT_P2="0.45" relLAI_P2="0.95" LAImax="5" RUEmax="3.5" relTT_Sn="0.6" SnParLAI="1" SnParRUE="1" TbaseDev="0" ToptDev="25" TTtoGerm="20" TTtoMatr="1570" EmgInter="15" EmgSlope="6" HrvIndex="0.54" PlntN_Em="0.059" PlntN_Hf="0.0226" PlntN_Mt="0.0131" GrnN_Mt="0.021" PlntP_Em="0.0057" PlntP_Hf="0.0022" PlntP_Mt="0.0013" GrnP_Mt="0.0017" Nfixing="N" PhotoSynID="C3" CHeight="1"/>
+		<Species SpeciesID="CB" Species_Name="Cocklebur" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.95" LAImax="2" RUEmax="3.3" relTT_Sn="0.6" SnParLAI="0.5" SnParRUE="1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.4" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="N" PhotoSynID="" CHeight=""/>
+		<Species SpeciesID="CW" Species_Name="Crested Wheatgrass" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.35" relLAI_P1="0.02" relTT_P2="0.62" relLAI_P2="0.95" LAImax="5" RUEmax="3.5" relTT_Sn="0.85" SnParLAI="2" SnParRUE="1" TbaseDev="6" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.1" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="N" PhotoSynID="" CHeight="0.5"/>
+		<Species SpeciesID="FA" Species_Name="Fallow" Source="" relTT_P1="" relLAI_P1="" relTT_P2="" relLAI_P2="" LAImax="" RUEmax="" relTT_Sn="" SnParLAI="" SnParRUE="" TbaseDev="" ToptDev="" TTtoGerm="" TTtoMatr="" EmgInter="" EmgSlope="" HrvIndex="" PlntN_Em="" PlntN_Hf="" PlntN_Mt="" GrnN_Mt="" PlntP_Em="" PlntP_Hf="" PlntP_Mt="" GrnP_Mt="" Nfixing="N" PhotoSynID="" CHeight=""/>
+		<Species SpeciesID="FS" Species_Name="Fake Soybean" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.95" LAImax="7" RUEmax="2.5" relTT_Sn="0.6" SnParLAI="0.1" SnParRUE="0.1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="1200" EmgInter="15" EmgSlope="6" HrvIndex="0.31" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="Y" PhotoSynID="" CHeight="0.5"/>
+		<Species SpeciesID="GF" Species_Name="Giant Foxtail" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.54" relLAI_P2="0.95" LAImax="5" RUEmax="3.7" relTT_Sn="0.6" SnParLAI="2" SnParRUE="1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.1" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="N" PhotoSynID="" CHeight="2"/>
+		<Species SpeciesID="GR" Species_Name="Green Foxtail" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.54" relLAI_P2="0.95" LAImax="4" RUEmax="3.7" relTT_Sn="0.6" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.15" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="N" PhotoSynID="" CHeight="2"/>
+		<Species SpeciesID="JG" Species_Name="Johnsongrass" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.57" relLAI_P2="0.95" LAImax="5" RUEmax="3.5" relTT_Sn="0.5" SnParLAI="1" SnParRUE="1" TbaseDev="11" ToptDev="30" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.15" PlntN_Em="0.044" PlntN_Hf="0.0164" PlntN_Mt="0.0128" GrnN_Mt="0.02" PlntP_Em="0.006" PlntP_Hf="0.0022" PlntP_Mt="0.0018" GrnP_Mt="0.0028" Nfixing="N" PhotoSynID="" CHeight="1"/>
+		<Species SpeciesID="MB" Species_Name="Meadow bromegrass" Source="Kiniry et al., 1995" relTT_P1="0.45" relLAI_P1="0.02" relTT_P2="0.8" relLAI_P2="0.95" LAImax="3" RUEmax="3.5" relTT_Sn="0.85" SnParLAI="2" SnParRUE="1" TbaseDev="6" ToptDev="25" TTtoGerm="20" TTtoMatr="1050" EmgInter="15" EmgSlope="6" HrvIndex="0.03" PlntN_Em="0.04" PlntN_Hf="0.024" PlntN_Mt="0.016" GrnN_Mt="0.0234" PlntP_Em="0.0028" PlntP_Hf="0.0017" PlntP_Mt="0.0011" GrnP_Mt="0.0033" Nfixing="N" PhotoSynID="" CHeight="0.3"/>
+		<Species SpeciesID="MQ" Species_Name="Mesquite" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.8" LAImax="4" RUEmax="1.15" relTT_Sn="0.9" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="30" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.76" PlntN_Em="0.006" PlntN_Hf="0.002" PlntN_Mt="0.0015" GrnN_Mt="0.0015" PlntP_Em="0.0007" PlntP_Hf="0.0004" PlntP_Mt="0.0003" GrnP_Mt="0.0003" Nfixing="N" PhotoSynID="" CHeight="2"/>
+		<Species SpeciesID="MZ" Species_Name="Maize/Corn" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.95" LAImax="6" RUEmax="3.9" relTT_Sn="0.5" SnParLAI="0.1" SnParRUE="0.1" TbaseDev="8" ToptDev="25" TTtoGerm="20" TTtoMatr="1200" EmgInter="15" EmgSlope="6" HrvIndex="0.5" PlntN_Em="0.044" PlntN_Hf="0.0164" PlntN_Mt="0.0128" GrnN_Mt="0.0175" PlntP_Em="0.0062" PlntP_Hf="0.0023" PlntP_Mt="0.0018" GrnP_Mt="0.0025" Nfixing="N" PhotoSynID="C4" CHeight="1.5"/>
+		<Species SpeciesID="OA" Species_Name="Oats (tentative TT)" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.02" relTT_P2="0.5" relLAI_P2="0.95" LAImax="6" RUEmax="3.5" relTT_Sn="0.8" SnParLAI="1" SnParRUE="2" TbaseDev="0" ToptDev="15" TTtoGerm="20" TTtoMatr="1000" EmgInter="15" EmgSlope="6" HrvIndex="0.42" PlntN_Em="0.06" PlntN_Hf="0.0231" PlntN_Mt="0.0134" GrnN_Mt="0.0234" PlntP_Em="0.0084" PlntP_Hf="0.0032" PlntP_Mt="0.0019" GrnP_Mt="0.0033" Nfixing="N" PhotoSynID="" CHeight="1"/>
+		<Species SpeciesID="OK" Species_Name="Oak" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.05" relLAI_P1="0.05" relTT_P2="0.4" relLAI_P2="0.95" LAImax="5" RUEmax="1.5" relTT_Sn="0.99" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="30" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.76" PlntN_Em="0.006" PlntN_Hf="0.002" PlntN_Mt="0.0015" GrnN_Mt="0.0015" PlntP_Em="0.0007" PlntP_Hf="0.0004" PlntP_Mt="0.0003" GrnP_Mt="0.0003" Nfixing="N" PhotoSynID="" CHeight="5"/>
+		<Species SpeciesID="PA" Species_Name="Generic Pasture" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.05" relLAI_P1="0.05" relTT_P2="0.49" relLAI_P2="0.95" LAImax="5" RUEmax="3" relTT_Sn="0.85" SnParLAI="2" SnParRUE="10" TbaseDev="8" ToptDev="25" TTtoGerm="20" TTtoMatr="1200" EmgInter="15" EmgSlope="6" HrvIndex="0.9" PlntN_Em="0.06" PlntN_Hf="0.0231" PlntN_Mt="0.0134" GrnN_Mt="0.0234" PlntP_Em="0.0084" PlntP_Hf="0.0032" PlntP_Mt="0.0019" GrnP_Mt="0.0033" Nfixing="N" PhotoSynID="" CHeight="0.3"/>
+		<Species SpeciesID="PC" Species_Name="Polish canola" Source="Kiniry et al., 1995" relTT_P1="0.15" relLAI_P1="0.02" relTT_P2="0.45" relLAI_P2="0.95" LAImax="3.5" RUEmax="3.4" relTT_Sn="0.5" SnParLAI="0.15" SnParRUE="0.3" TbaseDev="5" ToptDev="21" TTtoGerm="20" TTtoMatr="963" EmgInter="15" EmgSlope="6" HrvIndex="0.23" PlntN_Em="0.044" PlntN_Hf="0.0164" PlntN_Mt="0.0128" GrnN_Mt="0.038" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0023" GrnP_Mt="0.0079" Nfixing="N" PhotoSynID="" CHeight="0.5"/>
+		<Species SpeciesID="PI" Species_Name="Pine" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.7" relTT_P2="0.25" relLAI_P2="0.99" LAImax="5" RUEmax="1.5" relTT_Sn="0.99" SnParLAI="1" SnParRUE="1" TbaseDev="0" ToptDev="30" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.76" PlntN_Em="0.006" PlntN_Hf="0.002" PlntN_Mt="0.0015" GrnN_Mt="0.0015" PlntP_Em="0.0007" PlntP_Hf="0.0004" PlntP_Mt="0.0003" GrnP_Mt="0.0003" Nfixing="N" PhotoSynID="" CHeight="5"/>
+		<Species SpeciesID="PL" Species_Name="Poplar" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.05" relLAI_P1="0.05" relTT_P2="0.4" relLAI_P2="0.95" LAImax="5" RUEmax="3" relTT_Sn="0.99" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="30" TTtoGerm="20" TTtoMatr="1200" EmgInter="15" EmgSlope="6" HrvIndex="0.76" PlntN_Em="0.006" PlntN_Hf="0.002" PlntN_Mt="0.0015" GrnN_Mt="0.0015" PlntP_Em="0.0007" PlntP_Hf="0.0004" PlntP_Mt="0.0003" GrnP_Mt="0.0003" Nfixing="N" PhotoSynID="C3" CHeight="1.5"/>
+		<Species SpeciesID="RW" Species_Name="Russian wildrye" Source="Kiniry et al., 1995" relTT_P1="0.35" relLAI_P1="0.02" relTT_P2="0.62" relLAI_P2="0.95" LAImax="3" RUEmax="3" relTT_Sn="0.8" SnParLAI="1" SnParRUE="1" TbaseDev="0" ToptDev="15" TTtoGerm="20" TTtoMatr="1400" EmgInter="15" EmgSlope="6" HrvIndex="0.03" PlntN_Em="0.0226" PlntN_Hf="0.018" PlntN_Mt="0.014" GrnN_Mt="0.023" PlntP_Em="0.004" PlntP_Hf="0.004" PlntP_Mt="0.0024" GrnP_Mt="0.0037" Nfixing="N" PhotoSynID="" CHeight="1"/>
+		<Species SpeciesID="RY" Species_Name="Rye" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.3" relLAI_P1="0.01" relTT_P2="0.5" relLAI_P2="0.95" LAImax="3" RUEmax="3" relTT_Sn="0.8" SnParLAI="1" SnParRUE="1" TbaseDev="0" ToptDev="15" TTtoGerm="20" TTtoMatr="1200" EmgInter="15" EmgSlope="6" HrvIndex="0.42" PlntN_Em="0.0226" PlntN_Hf="0.018" PlntN_Mt="0.014" GrnN_Mt="0.023" PlntP_Em="0.004" PlntP_Hf="0.003" PlntP_Mt="0.0024" GrnP_Mt="0.0037" Nfixing="N" PhotoSynID="C3" CHeight="1"/>
+		<Species SpeciesID="SB" Species_Name="Soybean" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.95" LAImax="4.5" RUEmax="2.3" relTT_Sn="0.6" SnParLAI="0.1" SnParRUE="0.1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="1000" EmgInter="15" EmgSlope="6" HrvIndex="0.3" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="Y" PhotoSynID="C3" CHeight="0.6"/>
+		<Species SpeciesID="SC" Species_Name="Sugarcane" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.01" relTT_P2="0.5" relLAI_P2="0.95" LAImax="6" RUEmax="3" relTT_Sn="0.75" SnParLAI="0.5" SnParRUE="0.1" TbaseDev="11" ToptDev="25" TTtoGerm="20" TTtoMatr="1000" EmgInter="15" EmgSlope="6" HrvIndex="0.5" PlntN_Em="0.01" PlntN_Hf="0.004" PlntN_Mt="0.0025" GrnN_Mt="0" PlntP_Em="0.0075" PlntP_Hf="0.003" PlntP_Mt="0.0019" GrnP_Mt="0" Nfixing="N" PhotoSynID="" CHeight="2"/>
+		<Species SpeciesID="SF" Species_Name="Sunflower" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.01" relTT_P2="0.5" relLAI_P2="0.95" LAImax="4" RUEmax="4.9" relTT_Sn="0.55" SnParLAI="1" SnParRUE="2" TbaseDev="6" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.3" PlntN_Em="0.05" PlntN_Hf="0.023" PlntN_Mt="0.0146" GrnN_Mt="0.028" PlntP_Em="0.0063" PlntP_Hf="0.0029" PlntP_Mt="0.0023" GrnP_Mt="0.0061" Nfixing="N" PhotoSynID="" CHeight="1"/>
+		<Species SpeciesID="SG" Species_Name="Grain Sorghum" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.95" LAImax="5" RUEmax="3.1" relTT_Sn="0.63" SnParLAI="1" SnParRUE="1" TbaseDev="8" ToptDev="30" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.5" PlntN_Em="0.044" PlntN_Hf="0.0164" PlntN_Mt="0.0128" GrnN_Mt="0.02" PlntP_Em="0.006" PlntP_Hf="0.0022" PlntP_Mt="0.0018" GrnP_Mt="0.0028" Nfixing="N" PhotoSynID="C4" CHeight="1.5"/>
+		<Species SpeciesID="SW" Species_Name="Switchgrass" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.1" relLAI_P1="0.2" relTT_P2="0.2" relLAI_P2="0.95" LAImax="12" RUEmax="4.7" relTT_Sn="0.7" SnParLAI="1" SnParRUE="1" TbaseDev="12" ToptDev="25" TTtoGerm="20" TTtoMatr="1000" EmgInter="15" EmgSlope="6" HrvIndex="0.01" PlntN_Em="0.035" PlntN_Hf="0.015" PlntN_Mt="0.0038" GrnN_Mt="0.016" PlntP_Em="0.0014" PlntP_Hf="0.001" PlntP_Mt="0.0007" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="" CHeight="0.5"/>
+		<Species SpeciesID="VL" Species_Name="Velvetleaf" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.95" LAImax="3" RUEmax="2.7" relTT_Sn="0.9" SnParLAI="1" SnParRUE="1" TbaseDev="4" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.01" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="N" PhotoSynID="" CHeight="0.5"/>
+		<Species SpeciesID="WG" Species_Name="Western wheatgrass" Source="Kiniry et al., 1995" relTT_P1="0.5" relLAI_P1="0.02" relTT_P2="0.89" relLAI_P2="0.95" LAImax="5" RUEmax="3.5" relTT_Sn="0.85" SnParLAI="2" SnParRUE="1" TbaseDev="6" ToptDev="25" TTtoGerm="20" TTtoMatr="1100" EmgInter="15" EmgSlope="6" HrvIndex="0.03" PlntN_Em="0.03" PlntN_Hf="0.02" PlntN_Mt="0.012" GrnN_Mt="0.05" PlntP_Em="0.002" PlntP_Hf="0.0015" PlntP_Mt="0.0013" GrnP_Mt="0.004" Nfixing="N" PhotoSynID="" CHeight="0.5"/>
+		<Species SpeciesID="WH" Species_Name="Wheat" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.02" relTT_P2="0.5" relLAI_P2="0.95" LAImax="5" RUEmax="3.5" relTT_Sn="0.6" SnParLAI="1" SnParRUE="10" TbaseDev="0" ToptDev="15" TTtoGerm="20" TTtoMatr="1100" EmgInter="15" EmgSlope="6" HrvIndex="0.44" PlntN_Em="0.06" PlntN_Hf="0.0231" PlntN_Mt="0.0134" GrnN_Mt="0.0234" PlntP_Em="0.0084" PlntP_Hf="0.0032" PlntP_Mt="0.0019" GrnP_Mt="0.0033" Nfixing="N" PhotoSynID="C3" CHeight="1"/>
+		<Species SpeciesID="WS" Species_Name="Spring wheat" Source="Kiniry et al., 1995" relTT_P1="0.2" relLAI_P1="0.1" relTT_P2="0.49" relLAI_P2="0.95" LAImax="5" RUEmax="2.8" relTT_Sn="0.58" SnParLAI="1" SnParRUE="1" TbaseDev="0" ToptDev="18" TTtoGerm="20" TTtoMatr="1600" EmgInter="15" EmgSlope="6" HrvIndex="0.42" PlntN_Em="0.0663" PlntN_Hf="0.0255" PlntN_Mt="0.0148" GrnN_Mt="0.025" PlntP_Em="0.0053" PlntP_Hf="0.002" PlntP_Mt="0.0012" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C3" CHeight="1"/>
+		<Species SpeciesID="WW" Species_Name="Winter wheat" Source="Kiniry et al., 1995" relTT_P1="0.05" relLAI_P1="0.05" relTT_P2="0.45" relLAI_P2="0.95" LAImax="5" RUEmax="3" relTT_Sn="0.5" SnParLAI="0.5" SnParRUE="1" TbaseDev="0" ToptDev="18" TTtoGerm="20" TTtoMatr="1800" EmgInter="15" EmgSlope="6" HrvIndex="0.4" PlntN_Em="0.0663" PlntN_Hf="0.0255" PlntN_Mt="0.0148" GrnN_Mt="0.025" PlntP_Em="0.0053" PlntP_Hf="0.002" PlntP_Mt="0.0012" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C3" CHeight="1"/>
+		<Species SpeciesID="CH" Species_Name="Chickpea (FAKE!!!!!!!)" Source="ALMANAC (ABRVCROP.DAT)" relTT_P1="0.15" relLAI_P1="0.05" relTT_P2="0.5" relLAI_P2="0.95" LAImax="7" RUEmax="2.5" relTT_Sn="0.6" SnParLAI="0.1" SnParRUE="0.1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="0" EmgInter="15" EmgSlope="6" HrvIndex="0.31" PlntN_Em="0.0524" PlntN_Hf="0.0265" PlntN_Mt="0.0258" GrnN_Mt="0.065" PlntP_Em="0.0074" PlntP_Hf="0.0037" PlntP_Mt="0.0035" GrnP_Mt="0.0091" Nfixing="Y" PhotoSynID="" CHeight="0.5"/>
+		<Species SpeciesID="RI" Species_Name="Rice (From WW)" Source="Kiniry et al., 1995" relTT_P1="0.05" relLAI_P1="0.05" relTT_P2="0.45" relLAI_P2="0.95" LAImax="5" RUEmax="3" relTT_Sn="0.5" SnParLAI="0.5" SnParRUE="1" TbaseDev="0" ToptDev="18" TTtoGerm="20" TTtoMatr="1800" EmgInter="15" EmgSlope="6" HrvIndex="0.4" PlntN_Em="0.0663" PlntN_Hf="0.0255" PlntN_Mt="0.0148" GrnN_Mt="0.025" PlntP_Em="0.0053" PlntP_Hf="0.002" PlntP_Mt="0.0012" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C3" CHeight="0.7"/>
+		<Species SpeciesID="W1" Species_Name="Wheat" Source="Improved variety for NL" relTT_P1="0.15" relLAI_P1="0.02" relTT_P2="0.5" relLAI_P2="0.95" LAImax="10" RUEmax="4.7" relTT_Sn="0.6" SnParLAI="1" SnParRUE="10" TbaseDev="0" ToptDev="15" TTtoGerm="20" TTtoMatr="1600" EmgInter="15" EmgSlope="6" HrvIndex="0.55" PlntN_Em="0.06" PlntN_Hf="0.0231" PlntN_Mt="0.0134" GrnN_Mt="0.0234" PlntP_Em="0.0084" PlntP_Hf="0.0032" PlntP_Mt="0.0019" GrnP_Mt="0.0033" Nfixing="N" PhotoSynID="C3" CHeight="1"/>
+		<Species SpeciesID="SU" Species_Name="Switchgrass Upland" Source="RMF" 		relTT_P1="0.1" relLAI_P1="0.1" relTT_P2="0.5" relLAI_P2="0.95" LAImax="7" RUEmax="3.1" relTT_Sn="0.7" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="1500" EmgInter="15" EmgSlope="6" HrvIndex="0" PlntN_Em="0.015" PlntN_Hf="0.005" PlntN_Mt="0.008" GrnN_Mt="0" PlntP_Em="0.0014" PlntP_Hf="0.001" PlntP_Mt="0.0007" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C4" CHeight="1.5" RootPartFac="2.65" Perennial="Y" RootSenFac="0.5" LinRPart = "N" RWPC1 = "0.55" RWPC2 = "0.15"/>
+		<Species SpeciesID="SL" Species_Name="Switchgrass Lowland" Source="RMF" 	relTT_P1="0.1" relLAI_P1="0.1" relTT_P2="0.5" relLAI_P2="0.95" LAImax="7" RUEmax="3.1" relTT_Sn="0.7" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="1500" EmgInter="15" EmgSlope="6" HrvIndex="0" PlntN_Em="0.015" PlntN_Hf="0.005" PlntN_Mt="0.008" GrnN_Mt="0" PlntP_Em="0.0014" PlntP_Hf="0.001" PlntP_Mt="0.0007" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C4" CHeight="1.5" RootPartFac="2.65" Perennial="Y" RootSenFac="0.5" LinRPart = "N" RWPC1 = "0.55" RWPC2 = "0.15"/>
+		<Species SpeciesID="MG" Species_Name="Miscanthus x giganteous" Source="RMF" 	relTT_P1="0.1" relLAI_P1="0.1" relTT_P2="0.5" relLAI_P2="0.95" LAImax="7" RUEmax="3.1" relTT_Sn="0.7" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="1500" EmgInter="15" EmgSlope="6" HrvIndex="0" PlntN_Em="0.015" PlntN_Hf="0.005" PlntN_Mt="0.008" GrnN_Mt="0" PlntP_Em="0.0014" PlntP_Hf="0.001" PlntP_Mt="0.0007" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C4" CHeight="1.5" RootPartFac="2.65" Perennial="Y" RootSenFac="0.5" LinRPart = "N" RWPC1 = "0.55" RWPC2 = "0.15"/>
+		<Species SpeciesID="PR" Species_Name="Restored prairie" Source="RMF" 		relTT_P1="0.1" relLAI_P1="0.1" relTT_P2="0.5" relLAI_P2="0.95" LAImax="7" RUEmax="3.1" relTT_Sn="0.7" SnParLAI="1" SnParRUE="1" TbaseDev="10" ToptDev="25" TTtoGerm="20" TTtoMatr="1500" EmgInter="15" EmgSlope="6" HrvIndex="0" PlntN_Em="0.015" PlntN_Hf="0.005" PlntN_Mt="0.008" GrnN_Mt="0" PlntP_Em="0.0014" PlntP_Hf="0.001" PlntP_Mt="0.0007" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C4" CHeight="1.5" RootPartFac="2.65" Perennial="Y" RootSenFac="0.5" LinRPart = "N" RWPC1 = "0.55" RWPC2 = "0.15"/>
+		<Species SpeciesID="WR" Species_Name="Winter rye (cover crop)" Source="Kiniry et al., 1995" relTT_P1="0.05" relLAI_P1="0.05" relTT_P2="0.45" relLAI_P2="0.95" LAImax="5" RUEmax="3" relTT_Sn="0.5" SnParLAI="0.5" SnParRUE="1" TbaseDev="0" ToptDev="18" TTtoGerm="20" TTtoMatr="1800" EmgInter="15" EmgSlope="6" HrvIndex="0.4" PlntN_Em="0.0663" PlntN_Hf="0.0255" PlntN_Mt="0.0148" GrnN_Mt="0.025" PlntP_Em="0.0053" PlntP_Hf="0.002" PlntP_Mt="0.0012" GrnP_Mt="0.0022" Nfixing="N" PhotoSynID="C3" CHeight="1"/>
+	</Simple_Crop>
+	<N_Fix>
+		<Species SpeciesID="SB" Species_Name="Soybean" Source="SBGRO980.CUL" 					TTFIX="0" RFIXN="17.7" CtoNod="0.05"/>
+		<Species SpeciesID="SU" Species_Name="Switchgrass Upland" Source="SBGRO980.CUL" 		TTFIX="0" RFIXN="17.7" CtoNod="0.05"/>
+		<Species SpeciesID="SL" Species_Name="Switchgrass Lowland" Source="SBGRO980.CUL" 		TTFIX="0" RFIXN="17.7" CtoNod="0.05"/>
+		<Species SpeciesID="MG" Species_Name="Miscanthus x giganteous" Source="SBGRO980.CUL" 	TTFIX="0" RFIXN="17.7" CtoNod="0.05"/>
+		<Species SpeciesID="PR" Species_Name="Restored prairie" Source="SBGRO980.CUL" 			TTFIX="0" RFIXN="17.7" CtoNod="0.05"/>
+	</N_Fix>
+	<CO2_XY>
+		<PhotoSynType PhotSynID="C3">
+			<Point CO2="0" Multiplier="0"/>
+			<Point CO2="220" Multiplier="0.71"/>
+			<Point CO2="330" Multiplier="1"/>
+			<Point CO2="440" Multiplier="1.08"/>
+			<Point CO2="550" Multiplier="1.17"/>
+			<Point CO2="660" Multiplier="1.25"/>
+			<Point CO2="770" Multiplier="1.32"/>
+			<Point CO2="880" Multiplier="1.38"/>
+			<Point CO2="990" Multiplier="1.43"/>
+			<Point CO2="9999" Multiplier="1.5"/>
+		</PhotoSynType>
+		<PhotoSynType PhotSynID="C4">
+			<Point CO2="0" Multiplier="0"/>
+			<Point CO2="220" Multiplier="0.81"/>
+			<Point CO2="330" Multiplier="1"/>
+			<Point CO2="440" Multiplier="1.03"/>
+			<Point CO2="550" Multiplier="1.06"/>
+			<Point CO2="660" Multiplier="1.1"/>
+			<Point CO2="770" Multiplier="1.13"/>
+			<Point CO2="880" Multiplier="1.16"/>
+			<Point CO2="990" Multiplier="1.18"/>
+			<Point CO2="9999" Multiplier="1.25"/>
+		</PhotoSynType>
+	</CO2_XY>
+	<Version_Control>
+		<Version Number="1">
+			<ReleaseDate>11/26/1999 12:00:00 AM</ReleaseDate>
+			<Notes>Initial Rel., beta v.</Notes>
+		</Version>
+		<Version Number="1.1">
+			<ReleaseDate>11/27/1999 12:00:00 AM</ReleaseDate>
+			<Notes>Testing</Notes>
+		</Version>
+		<Version Number="X_1.1">
+			<ReleaseDate>03/20/2014</ReleaseDate>
+			<Notes>Automatically converted from Access DB by salus_access2xml program.</Notes>
+		</Version>
+	</Version_Control>
+</CDB>

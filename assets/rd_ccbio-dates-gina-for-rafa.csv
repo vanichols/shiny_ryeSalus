@@ -1,0 +1,48 @@
+obs_no,study,pub_reference,loc_citystate,lat,long,spec,type,term_meth,bio_kgha,plant_y,plant_mo,plant_mday,term_y,term_mo,term_mday,estimated,notes
+1,1,Davis (2010),"Urbana, IL",40.110588,-88.207268,rye,grass,averaged over methods,7100,2004,9,7,2005,5,13,plant_mday,stated cover crops were planted in early september
+5,1,Davis (2010),"Urbana, IL",40.110588,-88.207268,rye,grass,averaged over methods,6000,2005,9,7,2006,5,12,plant_mday,stated cover crops were planted in early september
+9,1,Davis (2010),"Urbana, IL",40.110588,-88.207268,rye,grass,averaged over methods,6000,2006,9,7,2007,5,11,plant_mday,stated cover crops were planted in early september
+13,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,mowed,939,2007,10,5,2008,6,11,,reported biomass averaged across 2008 and 2009 seasons
+13,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,mowed,939,2008,10,10,2009,6,11,,reported biomass averaged across 2008 and 2009 seasons
+14,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,roller crimper,604,2007,10,5,2008,6,11,plant_mday average of two years (Oct 5 and Oct 10). term_mday was same both years,reported biomass averaged across 2008 and 2009 seasons
+14,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,roller crimper,604,2008,10,10,2009,6,11,,reported biomass averaged across 2008 and 2009 seasons
+15,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,mowed,1212,2007,10,5,2008,6,11,plant_mday average of two years (Oct 5 and Oct 10). term_mday was same both years,reported biomass averaged across 2008 and 2009 seasons
+15,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,mowed,1212,2008,10,10,2009,6,11,,reported biomass averaged across 2008 and 2009 seasons
+16,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,roller crimper,186,2007,10,5,2008,6,11,plant_mday average of two years (Oct 5 and Oct 10). term_mday was same both years,reported biomass averaged across 2008 and 2009 seasons
+16,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,roller crimper,186,2008,10,10,2009,6,11,,reported biomass averaged across 2008 and 2009 seasons
+17,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,mowed,345,2007,10,5,2008,6,11,plant_mday average of two years (Oct 5 and Oct 10). term_mday was same both years,reported biomass averaged across 2008 and 2009 seasons
+17,2,Bernstein et al. (2011),"Arlington, WI",43.3375,-89.37376,rye,grass,mowed,345,2008,10,10,2009,6,11,,reported biomass averaged across 2008 and 2009 seasons
+18,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,375,2001,10,18,2002,5,1,,
+19,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,851,2001,10,18,2002,5,8,,
+20,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,2185,2001,10,18,2002,5,20,,
+XX,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,3768,2001,10,18,2002,5,28,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,489,2001,10,25,2002,5,1,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,728,2001,10,25,2002,5,8,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,1033,2001,10,25,2002,5,15,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,1797,2001,10,25,2002,5,22,,
+18,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,151,2002,10,11,2003,5,1,,
+19,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,222,2002,10,11,2003,5,7,,
+20,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,522,2002,10,11,2003,5,14,,
+XX,3,"De Bruin et al., 2005","Waseca, MN",44.0770411,-93.50838429,rye,grass,mowing,986,2002,10,11,2003,5,20,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,147,2002,11,1,2003,5,13,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,414,2002,11,1,2003,5,23,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,1424,2002,11,1,2003,6,2,,
+XX,3,"De Bruin et al., 2005","Rosemont, MN",44.735,-93.099,rye,grass,mowing,2928,2002,11,1,2003,6,17,,
+76,5,Forcella 2013,"Stevens County, MN",45.68333333,-95.8,rye,grass,roller crimper,6000,2009,9,2,2010,6,9,,SE 1040 kgha
+77,5,Forcella 2013,"Stevens County, MN",45.68333333,-95.8,rye,grass,roller crimper,6000,2010,9,20,2011,6,14,,SE 890 kgha
+115,11,"Werle et al., 2017","North Platte, NE",41.132511,-100.763969,rye,grass,herbicide,3766,2016,10,17,2017,4,18,,
+116,11,"Werle et al., 2017","North Platte, NE",41.132511,-100.763969,rye,grass,herbicide,4081,2016,9,20,2017,4,18,,
+119,12,"Crawford et al., 2018","Urbana, IL",40.076623,-88.239866,rye,grass,herbicide,2375,2013,9,11,2014,4,17,biomass is averaged over all three years,
+119,12,"Crawford et al., 2018","Urbana, IL",40.076623,-88.239866,rye,grass,herbicide,2375,2014,9,25,2015,4,17,biomass is averaged over all three years,
+119,12,"Crawford et al., 2018","Urbana, IL",40.076623,-88.239866,rye,grass,herbicide,2375,2015,9,25,2016,4,5,biomass is averaged over all three years,
+121,12,"Crawford et al., 2018","Urbana, IL",40.076623,-88.239866,rye,grass,herbicide,9003,2013,9,11,2014,5,5,biomass is averaged over all three years,
+121,12,"Crawford et al., 2018","Urbana, IL",40.076623,-88.239866,rye,grass,herbicide,9003,2014,9,25,2015,5,6,biomass is averaged over all three years,
+121,12,"Crawford et al., 2018","Urbana, IL",40.076623,-88.239866,rye,grass,herbicide,9003,2015,9,25,2016,4,15,biomass is averaged over all three years,
+126,13,Cornelius and Bradley 2017,"Columbia, Missouri",38.89805556,-92.37055556,rye,grass,herbicide,2892,2012,9,11,2013,4,25,,
+XX,13,Cornelius and Bradley 2017,"Columbia, Missouri",38.89805556,-92.37055556,rye,grass,herbicide,2445,2013,9,12,2014,5,2,,
+XX,13,Cornelius and Bradley 2017,"Columbia, Missouri",38.89805556,-92.37055556,rye,grass,herbicide,1941,2013,9,12,2014,5,2,,
+XX,13,Cornelius and Bradley 2017,"Columbia, Missouri",38.89805556,-92.37055556,rye,grass,herbicide,1149,2014,9,10,2015,4,23,,
+XX,13,Cornelius and Bradley 2017,"Moberly, Missouri",39.418369,-92.438237,rye,grass,herbicide,1386,2013,9,12,2014,5,2,,
+XX,13,Cornelius and Bradley 2017,"Moberly, Missouri",39.418369,-92.438237,rye,grass,herbicide,3930,2014,9,10,2015,4,23,,
+141,15,"Williams et al., 1998","Ithaca, Nebraska",41.145575,-96.498209,rye,grass,herbicide,6310,1994,9,7,1995,6,6,,
+145,15,"Williams et al., 1998","Ithaca, Nebraska",41.145575,-96.498209,rye,grass,herbicide,2890,1995,9,7,1996,5,23,,
