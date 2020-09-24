@@ -4,15 +4,19 @@
 library(tidyverse)
 library(maps)
 library(mapdata)
+library(ggridges)
 
 #--summarised simulations
 term <- 
   read_csv("create_shiny_data/IA_ccbio.csv") %>% 
-  pivot_longer(CWAD20:CWAD80, names_to = "prob", values_to = "ccbio")
+  pivot_longer(CWAD20:CWAD80, names_to = "prob", values_to = "ccbio") %>% 
+  filter(DOY < 197) #--july 15 is ridiculous
 
 #--raw-ish sims
 term2 <- 
-  read_rds("create_shiny_data/IA_ccbio-raws.rds")
+  read_rds("create_shiny_data/IA_ccbio-raws.rds") %>% 
+  filter(DOY < 197) #--july 15 is ridiculous
+
 
 
 
@@ -67,33 +71,31 @@ fig_dat %>% write_csv("create_shiny_data/IA_ccbio-map.csv")
 
 # raws, distributions -----------------------------------------------------------
 
-library(ggridges)
-
 term2_county <- 
   term2 %>%
   left_join(simdomain) %>%
-  mutate(dop2 = factor(dop, labels = c("Sep-15","Oct-7","Nov-1")),
-         DOY2 = factor(DOY, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1", "Jul-15")),
-         DOY3 = fct_rev(DOY2)) %>% 
-  filter(!is.na(CWAD))
+  filter(!is.na(CWAD)) %>% 
+  rename("dot" = DOY)
 
 #--this file is too big to write by itself
 #term2_county %>% write_rds("create_shiny_data/IA_ccbio-map-raws-full.rds")
 
-#--could write one for each county?
-
-
-
+#--could write one for each county? No. 
 
 #--get mean and sd of each distribution
 term3_county <- 
   term2_county %>% 
-  group_by(region, subregion, dop2, DOY2, DOY3) %>% 
+  group_by(region, subregion, dop, dot) %>% 
   summarise(CWAD_mean = mean(CWAD, na.rm = T),
-           CWAD_sd = sd(CWAD, na.rm = T))
-  
+           CWAD_sd = sd(CWAD, na.rm = T)) %>% 
+  #--sample from a normal dist with those means/sds
+  nest(data = c(region, subregion, dop, dot)) %>% 
+  mutate(ccbio_kgha = map2(CWAD_mean, CWAD_sd, rnorm, n = 150)) %>% 
+  select(-CWAD_mean, -CWAD_sd) %>% 
+  unnest(cols = data) %>% 
+  unnest(cols = ccbio_kgha)
 
-#--how big is term3?
+#--how big is term3? 14 MB, maybe it's ok?
 
 term3_county %>% write_csv("create_shiny_data/IA_ccbio-map-raws.csv")
 
@@ -122,12 +124,6 @@ term2_county %>%
 #--fake map w/just distributions
 library(cowplot)
 
-term3_county %>% 
-  nest(data = c(region, subregion, dop2, DOY2, DOY3)) %>% 
-  mutate(samps = map2(CWAD_mean, CWAD_sd, rnorm, n = 100)) %>% 
-  select(-CWAD_mean, -CWAD_sd) %>% 
-  unnest(cols = data) %>% 
-  unnest(cols = samps) ->a
 
 fake_fig <- 
   a %>% 
