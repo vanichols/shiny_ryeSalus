@@ -1,6 +1,7 @@
 # Gina, modified the map.R code 9/22/2020
 # trying to get Iowa data to make a shiny
 
+library(tidyverse)
 library(maps)
 library(mapdata)
 
@@ -20,7 +21,7 @@ simdomain <-
   data.frame(state = c("IA")) %>%
   group_by(state) %>%
   do(data = read.csv(paste0("assets/Raster_Counts/",.$state,"_combined_corn_county.csv"))) %>%
-  unnest() %>%
+  unnest(cols = c(data)) %>%
   separate(key, c("SoilID","lat","long","fips"), sep = "_") %>%
   mutate(Weatherfp = paste0(lat,"_",long)) %>%
   filter(SoilID %in% readRDS("data/SoilIDs.rds")) %>%
@@ -76,15 +77,33 @@ term2_county <-
          DOY3 = fct_rev(DOY2)) %>% 
   filter(!is.na(CWAD))
 
-term2_county %>% write_rds("create_shiny_data/IA_ccbio-map-raws.rds")
+#--this file is too big to write by itself
+#term2_county %>% write_rds("create_shiny_data/IA_ccbio-map-raws-full.rds")
 
+#--could write one for each county?
+
+
+
+
+#--get mean and sd of each distribution
+term3_county <- 
+  term2_county %>% 
+  group_by(region, subregion, dop2, DOY2, DOY3) %>% 
+  summarise(CWAD_mean = mean(CWAD, na.rm = T),
+           CWAD_sd = sd(CWAD, na.rm = T))
+  
+
+#--how big is term3?
+
+term3_county %>% write_csv("create_shiny_data/IA_ccbio-map-raws.csv")
 
 # example maps ------------------------------------------------------------
 
 
 #--practice map, I love it!
-term2_county %>% 
-  filter(subregion == "story") %>% 
+real_fig <- 
+  term2_county %>% 
+  filter(subregion == "story") %>% #--14,000 per county - why?
   ggplot(aes(x = CWAD, y = DOY3, fill = stat(x))) + 
   geom_density_ridges_gradient(scale = 2) +
   scale_fill_viridis_c(option = "C") +
@@ -92,6 +111,46 @@ term2_county %>%
   facet_grid(.~dop2, scales = "free")
 
 
+#--what is actually in term2_county
+term2_county %>% 
+  select(year, CWAD, state, region, subregion, dop2, DOY2) %>% 
+  distinct() %>% #--gets rid of some state border repeats I think
+  filter(subregion == "story") ->b
+  
+
+
+#--fake map w/just distributions
+library(cowplot)
+
+term3_county %>% 
+  nest(data = c(region, subregion, dop2, DOY2, DOY3)) %>% 
+  mutate(samps = map2(CWAD_mean, CWAD_sd, rnorm, n = 100)) %>% 
+  select(-CWAD_mean, -CWAD_sd) %>% 
+  unnest(cols = data) %>% 
+  unnest(cols = samps) ->a
+
+fake_fig <- 
+  a %>% 
+  filter(subregion == "story") %>% 
+  ggplot(aes(x = samps, y = DOY3, fill = stat(x))) + 
+  geom_density_ridges_gradient(scale = 2) +
+  scale_fill_viridis_c(option = "C") +
+  #coord_cartesian(xlim = c(0, 6000)) + 
+  facet_grid(.~dop2, scales = "free")
+
+
+#--compare, they aren't perfect
+library(patchwork)
+real_fig/fake_fig
+
+
+
+#--could also trim by sampling from the og dataframe?
+term2_county %>% 
+  select(year, dop, dop2, DOY, DOY2, state, subregion, CWAD) %>% 
+  arrange(subregion, dop)
+  group_by(state, subregion, dop2, DOY2, DOY3, year) %>% 
+  sample_n(size = 100)
 
 
 fig_dat2 <- 
