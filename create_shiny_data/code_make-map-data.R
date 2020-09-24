@@ -90,14 +90,14 @@ term3_county <-
            CWAD_sd = sd(CWAD, na.rm = T)) %>% 
   #--sample from a normal dist with those means/sds
   nest(data = c(region, subregion, dop, dot)) %>% 
-  mutate(ccbio_kgha = map2(CWAD_mean, CWAD_sd, rnorm, n = 150)) %>% 
+  mutate(ccbio_kgha = map2(CWAD_mean, CWAD_sd, rnorm, n = 100)) %>% 
   select(-CWAD_mean, -CWAD_sd) %>% 
   unnest(cols = data) %>% 
   unnest(cols = ccbio_kgha)
 
 #--how big is term3? 14 MB, maybe it's ok?
 
-term3_county %>% write_csv("create_shiny_data/IA_ccbio-map-raws.csv")
+term3_county %>% write_rds("create_shiny_data/IA_ccbio-map-raws.rds")
 
 # example maps ------------------------------------------------------------
 
