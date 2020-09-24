@@ -1,4 +1,5 @@
 # Have different planting dates faceted
+# Use ggridges to show distributions
 
 library(ggthemes)
 library(shiny)
@@ -6,21 +7,39 @@ library(tidyverse)
 library(maps)
 library(shinythemes)
 
-ccbio <- read_csv("create_shiny_data/IA_ccbio-map.csv") %>% 
-    mutate(subregion = str_to_title(subregion),
-           prob_nice = case_when(
-               grepl("20", prob) ~ "20% Probability",
-               grepl("50", prob) ~ "50% Probability",
-               grepl("80", prob) ~ "80% Probability"),
-           ccbio_lbs = round(ccbio * 2.2/2.47, 0),
-           dop2 = factor(dop2, levels = c("Sep-15", "Oct-7", "Nov-1"))
-           )
+
+# #--for running through script
+# ccbio <- 
+#   read_csv("create_shiny_data/IA_ccbio-map-raws.csv") %>% 
+#     mutate(subregion = str_to_title(subregion),
+#            ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
+#            ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
+#            dop_nice = factor(dop, labels = c("Sep-15", "Oct-7", "Nov-1")),
+#            dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1")),
+#            dot_nicerev = fct_rev(dot_nice)
+#            ) 
+#ccbio
+
+#--for running with 'run app'
+ccbio <- 
+  read_csv("../create_shiny_data/IA_ccbio-map-raws.csv") %>% 
+  mutate(subregion = str_to_title(subregion),
+         ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
+         ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
+         dop_nice = factor(dop, labels = c("Sep-15", "Oct-7", "Nov-1")),
+         dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1")),
+         dot_nicerev = fct_rev(dot_nice)
+  ) 
+
+county_map <- 
+  map_data("county") %>% 
+  as_tibble() %>% 
+  filter(region == "iowa") %>% 
+  mutate(subregion = str_to_title(subregion))
+  
 
 #--dropdowns
 dd_county <- ccbio %>% select(subregion) %>% distinct() %>% pull() 
-dd_dop <- ccbio %>% select(dop2) %>% distinct() %>% pull()
-dd_dot <- ccbio %>% select(DOY2) %>% distinct() %>% pull()
-
 
 
 # Define UI for application that draws a histogram
@@ -33,22 +52,27 @@ ui <- fluidPage(
     tabPanel(
         "Rye Cover Crop Biomass Production",
        
-        plotOutput('plot', height = 800),
-        
-        hr(),
         
         fluidRow(
-            column(4,
-                   selectizeInput('county', 'Choose a county:', dd_county)
-            ),
-            column(4,
-                   selectizeInput('dot', 'Choose a termination date:', dd_dot),
-            ))        
+          column(3,
+                 selectizeInput(inputId = "county", 
+                                label = "Choose a county:",
+                                selected = "Story",
+                                choices = dd_county)),
+          column(9, 
+                 plotOutput('fig_map', width = 400, height = 350))
+          
+          
+        ), 
+        
+        plotOutput('fig_dens', height = 500),
+        
+        hr()
         ),
     tabPanel(
         "About",
         fluidRow(
-            column(6,
+            column(12,
                    includeMarkdown("about.md")
             )
     )
@@ -56,79 +80,72 @@ ui <- fluidPage(
 )
 )
 
+
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
     
+  #--which county to highlight on map
     dataset1 <- reactive({
-        ccbio %>% 
-            filter(#dop2 == input$dop,
-                   DOY2 == input$dot)
+        county_map %>% 
+            filter(subregion == input$county)
     })
     
+    #--which county to display data fro
     dataset2 <- reactive({
-        ccbio %>% 
-            filter(#dop2 == input$dop,
-                   DOY2 == input$dot,
-                   subregion == input$county)
+      ccbio %>% 
+        filter(subregion == input$county)
     })
-    
-    dataset3 <- reactive({
-        ccbio %>% 
-            filter(#dop2 == input$dop,
-                   DOY2 == input$dot,
-                   subregion == input$county) %>% 
-            group_by(prob_nice, dop2) %>% 
-            summarise(long = mean(long),
-                      lat = mean(lat),
-                      ccbio_lbs = mean(ccbio_lbs, na.rm = T)) %>% 
-            distinct()
-        
-    })
-    
-    
-   
 
-    output$plot <- renderPlot({
+    #--map showing highlighted county
+    output$fig_map <- renderPlot({
         
       
-        
         ggplot() + 
-            #geom_polygon(data = dataset1(), aes(x=long, y = lat, group = group, fill = ccbio)) + 
-            geom_polygon(data = dataset1(), aes(x=long, y = lat, group = group), fill = "gray80", color = "white", lwd = 0.5) + 
-            geom_polygon(data = dataset2(),
-                         aes(x=long, y = lat, group = group, fill = ccbio_lbs),
-                         color = "red",
-                         #fill = NA,
+            geom_polygon(data = county_map, aes(x=long, y = lat, group = group), 
+                         fill = "gray80", color = "white", lwd = 0.5) + 
+            geom_polygon(data = dataset1(),
+                         aes(x=long, y = lat, group = group),
+                         color = "mediumseagreen", #seagreen springgreen4
+                         fill = "gold1",
                          lwd = 1.5) +
-            geom_label(data = dataset3(), 
-                       aes(x = long, y = lat+0.5, label = paste(ccbio_lbs, "lbs/ac")),
-                       size = 10) +
-            labs(x = NULL,
-                 y = "Planting Date") + 
-            facet_grid(dop2~prob_nice, switch = "y") + 
-            scale_fill_viridis_c() +
-            scale_fill_gradient(low = "lightgreen", high = "green4") +
-            ggthemes::theme_few() + 
-            theme(legend.position = "top",
-                  panel.background = element_rect(fill = "white"),
-                  aspect.ratio = 0.8,
-                  axis.title = element_text(size = rel(1.7)),
+        ggthemes::theme_few() + 
+        coord_cartesian() + 
+        theme(panel.background = element_rect(fill = "white"),
+                  axis.title = element_blank(),
                   axis.ticks = element_blank(),
                   axis.text = element_blank(),
-                  strip.text = element_text(size = rel(1.5), face = "bold"),
+              aspect.ratio = 0.7,
                   plot.background = element_rect(fill = "transparent", colour = NA),
                   panel.grid = element_blank(),
-                  panel.border = element_blank()) +
-            guides(fill = F)
-            # guides(fill = guide_colorbar(title.position = "top",
-            #                              title.hjust = 0.5,
-            #                              barwidth = 20,
-            #                              barheight = 0.8))  
-        
+                  panel.border = element_blank()) 
         
         
     })
+    
+    output$fig_dens <- renderPlot({
+      
+      
+      ggplot(data = dataset2(), aes(x = ccbio_lbs, y = dot_nicerev, fill = stat(x))) + 
+        geom_density_ridges_gradient(scale = 2) +
+        geom_vline(xintercept = 2000, linetype = "dashed", color = "black") +
+        scale_fill_viridis_c(option = "C") +
+        facet_grid(.~dop_nice, scales = "free") + 
+        labs(x = "Cover Crop Biomass (lbs/ac)",
+             y = "Termination Date",
+             title = "Planting Date") +
+        theme(axis.title = element_text(size = rel(2.5)),
+              axis.text.x = element_text(size = rel(2.3)),
+              axis.text.y = element_text(size = rel(2.5)),
+              strip.text = element_text(size = rel(2.5), face = "bold")
+              ) +
+        theme_bw()
+      
+      
+      
+      
+    })
+    
 }
 
 # Run the application 
