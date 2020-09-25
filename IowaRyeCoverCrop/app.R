@@ -1,6 +1,7 @@
 # Have different planting dates faceted
 # Use ggridges to show distributions
 
+library(ggridges)
 library(ggthemes)
 library(shiny)
 library(tidyverse)
@@ -23,11 +24,12 @@ library(shinythemes)
 #--for running with 'run app'
 ccbio <- 
   read_rds("IA_ccbio-map-raws.rds") %>% 
+  filter(dot < 183) %>% #--jul-1 not realistic
   mutate(subregion = str_to_title(subregion),
          ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
          ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
          dop_nice = factor(dop, labels = c("Sep-15 (Early)", "Oct-7 (Expected)", "Nov-1 (Late)")),
-         dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1")),
+         dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15")),
          dot_nicerev = fct_rev(dot_nice)
   ) 
 
@@ -68,7 +70,7 @@ ui <- fluidPage(
           
         ), 
         
-        plotOutput('fig_dens', height = 500),
+        plotOutput('fig_dens'),
         
         hr()
         ),
@@ -129,8 +131,14 @@ server <- function(input, output) {
     output$fig_dens <- renderPlot({
       
       
-      ggplot(data = dataset2(), aes(x = ccbio_lbs, y = dot_nicerev, fill = stat(x))) + 
-        geom_density_ridges_gradient(scale = 2) +
+      ggplot(data = dataset2(), aes(x = ccbio_lbs, 
+                                    y = dot_nicerev, 
+                                    fill = stat(x), 
+                                    height = ..density..)) + 
+        geom_density_ridges_gradient(stat = "density", 
+                                     trim = TRUE, 
+                                     #scale = 2
+                                     ) +
         geom_vline(xintercept = 2000, linetype = "dashed", color = "black") +
         scale_fill_viridis_c(option = "C") +
         facet_grid(.~dop_nice, scales = "free") + 
@@ -143,7 +151,6 @@ server <- function(input, output) {
               strip.text = element_text(size = rel(2.5), face = "bold")
               ) +
         theme_bw()
-      
       
       
       
