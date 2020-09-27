@@ -7,6 +7,7 @@ library(shiny)
 library(tidyverse)
 library(maps)
 library(shinythemes)
+library(extrafont)
 
 
 # #--for running through script
@@ -27,8 +28,8 @@ ccbio <-
   filter(dot < 183) %>% #--jul-1 not realistic
   mutate(subregion = str_to_title(subregion),
          ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
-         ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
-         dop_nice = factor(dop, labels = c("Sep-15 (Early)", "Oct-7 (Expected)", "Nov-1 (Late)")),
+         ccbio_lbs = ifelse(ccbio_lbs < 0, 0, ccbio_lbs),
+         dop_nice = factor(dop, labels = c("Planted Sep-15", "Planted Oct-7", "Planted Nov-1")),
          dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15")),
          dot_nicerev = fct_rev(dot_nice)
   ) 
@@ -62,15 +63,19 @@ ui <- fluidPage(
                                 selected = "Story",
                                 choices = dd_county),
                  includeMarkdown("desc.md")),
-          column(8, 
+          column(4, 
                  plotOutput('fig_map', width = 400, height = 350)),
-          # column(4, 
-          #        includeMarkdown("desc.md"))
-          # 
+          column(4, 
+          fluidRow(
+            column(12, 
+                 img(src = "popcan2.png", height = 300, width = 200)),
+            column(12,
+                   includeMarkdown("popcan.md"))))
+           
           
         ), 
         
-        plotOutput('fig_dens'),
+        plotOutput('fig_dens', height = 400),
         
         hr()
         ),
@@ -107,10 +112,10 @@ server <- function(input, output) {
         
       
         ggplot() + 
-            geom_polygon(data = county_map, aes(x=long, y = lat, group = group), 
+            geom_polygon(data = county_map, aes(x = long, y = lat, group = group), 
                          fill = "gray80", color = "white", lwd = 0.5) + 
             geom_polygon(data = dataset1(),
-                         aes(x=long, y = lat, group = group),
+                         aes(x = long, y = lat, group = group),
                          color = "black", # "mediumseagreen", #seagreen springgreen4
                          fill = "gold1",
                          lwd = 1.5) +
@@ -145,16 +150,16 @@ server <- function(input, output) {
         labs(x = "Cover Crop Biomass (lbs/ac)",
              y = "Termination Date") +
         guides(fill = F) +
-        theme(axis.title = element_text(size = rel(2.5)),
-              axis.text.x = element_text(size = rel(2.3)),
-              axis.text.y = element_text(size = rel(2.5)),
-              strip.text = element_text(size = rel(2.5), face = "bold")
-              ) +
+        theme(#axis.title = element_text(size = 14),
+              #axis.text.x = element_text(size = rel(2.3)),
+              #axis.text.y = element_text(size = rel(2.5)),
+              #strip.text = element_text(size = rel(2.5), face = "bold"),
+              text = element_text(family="Arial")) +
         theme_bw()
       
       
       
-    })
+    }, res = 130)
     
 }
 
