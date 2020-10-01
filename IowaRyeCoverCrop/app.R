@@ -117,7 +117,9 @@ ui <- fluidPage(
           ), 
 
         
-        h3("Cover Crop Biomass Production (lbs/ac)"),
+        h1("Cover Crop Biomass Production (lbs/ac)"),
+        h2("Values shown for:"),
+        h4("- unfavorable (red) years - average (black) years - favorable (blue) years"),
         plotOutput('fig_sum')
                 
         # fluidRow(
@@ -156,7 +158,8 @@ ui <- fluidPage(
                         includeMarkdown("popcan.md"))))
         
         
-      )
+      ),
+      plotOutput("fig_dist")
         ),
     #--end tab
     
@@ -299,19 +302,39 @@ server <- function(input, output) {
                      lwd = 1.5) +
       
         #--bad year
-        # geom_text(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"), 
-        #           aes(x = long - 1, y = lat + 0.75),
-        #           label = "Unfavorable Year",
-        #           size = 10) +
-        geom_label_repel(data = dataset3(), 
-                   aes(x = long, y = lat, 
-                       fill = prob_nice, 
-                       label = paste0(ccbio_lbs, " lbs/ac")),
-                   size = 10,
-                   box.padding = 1,
-                   point.padding = NA,
-                   segement.color = NA) +
-        scale_fill_manual(values = c("red", "yellow", "green4")) +
+        geom_label(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
+                  aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                      size = ccbio_lbs),
+                  x = -95.9, 
+                  y = 42.5,
+                  #size = 10,
+                  color = "red") +
+        #--avg year
+        geom_label(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
+                  aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                      size = ccbio_lbs),
+                  x = -94, 
+                  y = 42.5,
+                  #size = 10,
+                  color = "black") +
+      #--good year
+      geom_label(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
+                aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                    size = ccbio_lbs),
+                x = -91.5, 
+                y = 42.5,
+                #size = 10,
+                color = "blue") +
+        # geom_label_repel(data = dataset3(), 
+        #            aes(x = long, y = lat, 
+        #                fill = prob_nice, 
+        #                label = paste0(ccbio_lbs, " lbs/ac")),
+        #            size = 10,
+        #            box.padding = 1,
+        #            point.padding = NA,
+        #            segement.color = NA) +
+        # scale_fill_manual(values = c("red", "yellow", "green4")) +
+        scale_size_continuous(range = c(5, 12)) +
         ggthemes::theme_few() + 
         theme(legend.position = "left",
               panel.background = element_rect(fill = "white"),
@@ -325,7 +348,7 @@ server <- function(input, output) {
               panel.grid = element_blank(),
               panel.border = element_blank()) +
         coord_quickmap() +
-        labs(fill = NULL)
+        guides(size = F) 
       
       
     })
