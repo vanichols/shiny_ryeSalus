@@ -119,7 +119,9 @@ ui <- fluidPage(
         
         h1("Cover Crop Biomass Production (lbs/ac)"),
         h2("Values shown for:"),
-        h4("- unfavorable (red) years - average (black) years - favorable (blue) years"),
+        h4("- unfavorable (red) years"),
+        h4("- average (black) years"),
+        h4("- favorable (blue) years"),
         plotOutput('fig_sum')
                 
         # fluidRow(
@@ -292,38 +294,37 @@ server <- function(input, output) {
       ggplot() + 
         geom_polygon(data = dataset1(), aes(x=long, y = lat, group = group), fill = "gray80", color = "white", lwd = 0.5) + 
         geom_polygon(data = dataset2(),
-                     aes(x = long, 
-                         y = lat, 
-                         group = group, 
-                         #fill = ccbio_lbs
-                         ),
-                     color = "black",
-                     fill = "black",
+                     aes(x = long, y = lat, group = group),
+                     color = "black", # "mediumseagreen", #seagreen springgreen4
+                     fill = "gold1",
                      lwd = 1.5) +
       
         #--bad year
         geom_label(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
                   aes(label = paste0(ccbio_lbs, " lbs/ac"),
-                      size = ccbio_lbs),
-                  x = -95.9, 
-                  y = 42.5,
-                  #size = 10,
+                      #size = ccbio_lbs
+                      ),
+                  x = -93.8, 
+                  y = 43,
+                  size = 10,
                   color = "red") +
         #--avg year
         geom_label(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
                   aes(label = paste0(ccbio_lbs, " lbs/ac"),
-                      size = ccbio_lbs),
-                  x = -94, 
+                      #size = ccbio_lbs
+                      ),
+                  x = -93.8, 
                   y = 42.5,
-                  #size = 10,
+                  size = 10,
                   color = "black") +
       #--good year
       geom_label(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
                 aes(label = paste0(ccbio_lbs, " lbs/ac"),
-                    size = ccbio_lbs),
-                x = -91.5, 
-                y = 42.5,
-                #size = 10,
+                    #size = ccbio_lbs
+                    ),
+                x = -93.8, 
+                y = 42,
+                size = 10,
                 color = "blue") +
         # geom_label_repel(data = dataset3(), 
         #            aes(x = long, y = lat, 

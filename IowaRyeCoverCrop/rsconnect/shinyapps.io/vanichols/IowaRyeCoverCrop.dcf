@@ -5,9 +5,9 @@ account: vanichols
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2882255
-bundleId: 3692489
+bundleId: 3722185
 url: https://vanichols.shinyapps.io/IowaRyeCoverCrop/
-when: 1601576213.83034
+when: 1602276663.79858
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: app-play.R|app-table.R|app2.R
