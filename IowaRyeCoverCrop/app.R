@@ -302,39 +302,68 @@ server <- function(input, output) {
         #--bad year
         geom_label(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
                   aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                      y = lat + 0.5,
+                      x = long - 3,
                       #size = ccbio_lbs
                       ),
-                  x = -93.8, 
-                  y = 43,
+                  #x = -94.5, 
+                  #x = -93.8, 
+                  #y = 43,
                   size = 10,
                   color = "red") +
+        geom_text(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
+                  label = "Unfavorable Year:",
+                  aes(y = lat + 0.8,
+                       x = long - 3,
+                       #size = ccbio_lbs
+                   ),
+                   #x = -94.5, 
+                   #x = -93.8, 
+                   #y = 43,
+                   size = 10,
+                   color = "red") +
         #--avg year
         geom_label(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
                   aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                      y = lat + 0.5,
+                      x = long,
                       #size = ccbio_lbs
                       ),
-                  x = -93.8, 
-                  y = 42.5,
+                  #x = -93.5, 
+                  #y = 42.5,
                   size = 10,
                   color = "black") +
+        geom_text(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
+                   label = "Average Year:",
+                   aes(y = lat + 0.8,
+                       x = long,
+                       #size = ccbio_lbs
+                   ),
+                   #x = -93.5, 
+                   #y = 42.5,
+                   size = 10,
+                   color = "black") +
       #--good year
       geom_label(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
                 aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                    y = lat + 0.5,
+                    x = long + 3
                     #size = ccbio_lbs
                     ),
-                x = -93.8, 
-                y = 42,
+                #x = -93, 
+                #y = 42,
                 size = 10,
                 color = "blue") +
-        # geom_label_repel(data = dataset3(), 
-        #            aes(x = long, y = lat, 
-        #                fill = prob_nice, 
-        #                label = paste0(ccbio_lbs, " lbs/ac")),
-        #            size = 10,
-        #            box.padding = 1,
-        #            point.padding = NA,
-        #            segement.color = NA) +
-        # scale_fill_manual(values = c("red", "yellow", "green4")) +
+        geom_text(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
+                   label = "Favorable Year:",
+                   aes(y = lat + 0.8,
+                       x = long + 3
+                       #size = ccbio_lbs
+                   ),
+                   #x = -93, 
+                   #y = 42,
+                   size = 10,
+                   color = "blue") +
         scale_size_continuous(range = c(5, 12)) +
         ggthemes::theme_few() + 
         theme(legend.position = "left",
@@ -347,8 +376,10 @@ server <- function(input, output) {
               strip.text = element_text(size = rel(1.5), face = "bold"),
               plot.background = element_rect(fill = "transparent", colour = NA),
               panel.grid = element_blank(),
-              panel.border = element_blank()) +
-        coord_quickmap() +
+              panel.border = element_blank(),
+              #plot.margin = margin(4, 4, 4, 4, "cm")
+              ) +
+        coord_quickmap(clip = "off") +
         guides(size = F) 
       
       
