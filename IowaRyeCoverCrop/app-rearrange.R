@@ -8,24 +8,43 @@ library(tidyverse)
 library(maps)
 library(shinythemes)
 library(extrafont)
+library(ggrepel)
+
+# #--for running through script
+# ccbio <- 
+#   read_csv("create_shiny_data/IA_ccbio-map-raws.csv") %>% 
+#     mutate(subregion = str_to_title(subregion),
+#            ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
+#            ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
+#            dop_nice = factor(dop, labels = c("Sep-15", "Oct-7", "Nov-1")),
+#            dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1")),
+#            dot_nicerev = fct_rev(dot_nice)
+#            ) 
+#ccbio
+
+#--for running with 'run app'
 
 
-#--for running through script
-ccbio <-
-  read_csv("create_shiny_data/IA_ccbio-map-raws.csv") %>%
-    mutate(subregion = str_to_title(subregion),
-           ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
-           ccbio_lbs = ifelse(ccbio_lbs <0, 0, ccbio_lbs),
-           dop_nice = factor(dop, labels = c("Sep-15", "Oct-7", "Nov-1")),
-           dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1")),
-           dot_nicerev = fct_rev(dot_nice)
-           )
-ccbio
+#--------------------------------------------
+#--for data distributions
+ccbio_dist <- 
+  read_rds("IA_ccbio-map-raws.rds") %>% 
+  filter(dot < 183) %>% #--jul-1 not realistic
+  mutate(subregion = str_to_title(subregion),
+         ccbio_lbs = round(ccbio_kgha * 2.2/2.47, 0),
+         ccbio_lbs = ifelse(ccbio_lbs < 0, 0, ccbio_lbs),
+         dop_nice = factor(dop, labels = c("Planted Sep-15", "Planted Oct-7", "Planted Nov-1")),
+         dot_nice = factor(dot, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15")),
+         dot_nicerev = fct_rev(dot_nice)
+  ) 
+
+#--dropdowns
+dd_county_dist <- ccbio_dist %>% select(subregion) %>% distinct() %>% pull() 
 
 
 #--------------------------------------------
 #--for summarised data
-ccbio_sum <- read_csv("IowaRyeCoverCrop/IA_ccbio-map.csv") %>% 
+ccbio_sum <- read_csv("IA_ccbio-map.csv") %>% 
   mutate(subregion = str_to_title(subregion),
          prob_nice = case_when(
            grepl("20", prob) ~ "In An Unfavorable Year",
@@ -37,21 +56,6 @@ ccbio_sum <- read_csv("IowaRyeCoverCrop/IA_ccbio-map.csv") %>%
          prob_nice = fct_rev(prob_nice),
          ccbio_lbs = round(ccbio * 2.2/2.47, -1)
   )
-
-
-ccbio_sum %>% 
-  summarise(ml = min(lat),
-            mlo = min(long))
-
-
-ccbio_sum %>% 
-  filter(dop2 == "Oct-7",
-         subregion == "Story") %>% 
-  group_by(prob_nice) %>% 
-  summarise(ccbio_lbs = round(mean(ccbio_lbs, na.rm = T), -1)) %>% 
-  distinct() %>% 
-  pivot_wider(names_from = "prob_nice", values_from = "ccbio_lbs")
-
 
 #--dropdowns
 dd_county_sum <- ccbio_sum %>% select(subregion) %>% distinct() %>% pull() 
@@ -65,7 +69,14 @@ county_map <-
   as_tibble() %>% 
   filter(region == "iowa") %>% 
   mutate(subregion = str_to_title(subregion))
-  
+
+state_map <- 
+  map_data("state") %>% 
+  as_tibble() %>% 
+  filter(region %in% c("iowa", "illinois", "indiana", 
+                       "minnesota", "michigan", "wisconsin", "ohio")) %>% 
+  mutate(region = str_to_title(region))
+
 
 
 # Define UI for application that draws a histogram
@@ -75,46 +86,37 @@ ui <- fluidPage(
     # Application title
     navbarPage("Iowa Cover Crop Biomass Explorer",
     
+               #--start tab
     tabPanel(
         "Data Summaries",
        
         fluidRow(
           #--first bit
-          column(9,
-                 fluidRow(
-                   column(12,
-                          includeMarkdown("desc_sum.md")),
+          column(4,
+                 includeMarkdown("desc_sum.md"),
                    br(),
-                   fluidRow(
-                     br(),
-                     column(3,
-                            selectizeInput(inputId = "county_sum", 
+                   selectizeInput(inputId = "county_sum", 
                                 label = "Choose a county:",
                                 selected = "Story",
-                                choices = dd_county_sum)),
-                     column(3,
+                                choices = dd_county_sum),
                  selectizeInput(inputId = "dop_sum",
                                 label = "Choose a planting date:",
                                 selected = "Oct-7",
-                                choices = dd_dop_sum)),
-                 column(3,
+                                choices = dd_dop_sum),
                  selectizeInput(inputId = "dot_sum",
                                 label = "Choose a termination date:",
                                 selected = "Apr-15",
-                                choices = dd_dot_sum))
-                 ))),
-          column(3, 
-                 fluidRow(
-            column(12, 
-                 img(src = "popcan2.png", height = 300, width = 200)),
-            column(12,
-                   includeMarkdown("popcan.md"))))
-          ), 
+                                choices = dd_dot_sum),
+                 img(src = "popcan2.png", height = 300, width = 200),
+                 includeMarkdown("popcan.md")),
+             column(8,
         
-        plotOutput('fig_sum', height = 400),
-        ),
+        #h1("Cover Crop Biomass Production (lbs/ac)"),
+        plotOutput('fig_sum', height = 1000, width = 900)
+        ))),
+    #--end tab
     
-    
+    #--start tab
     tabPanel(
       "Data Distributions",
       
@@ -136,12 +138,12 @@ ui <- fluidPage(
                         includeMarkdown("popcan.md"))))
         
         
-      ), 
-      
-      plotOutput('fig_dist', height = 400),
-      
-      hr()
-    ),
+      ),
+      plotOutput("fig_dist")
+        ),
+    #--end tab
+    
+    #--start tab
     tabPanel(
         "About",
         fluidRow(
@@ -149,7 +151,9 @@ ui <- fluidPage(
                    includeMarkdown("about.md")
             )
     )
-)
+    )
+    #--end tab
+
 )
 )
 
@@ -171,7 +175,9 @@ server <- function(input, output) {
     output$fig_map_dist <- renderPlot({
         
       
-        ggplot() + 
+        ggplot() +
+        geom_polygon(data = state_map, aes(x = long, y = lat, group = group), 
+                     fill = "gray80", color = "white", lwd = 0.2) +
             geom_polygon(data = county_map, aes(x = long, y = lat, group = group), 
                          fill = "gray80", color = "white", lwd = 0.5) + 
             geom_polygon(data = dataset_map_dist(),
@@ -266,45 +272,108 @@ server <- function(input, output) {
       
       
       ggplot() + 
-        #geom_polygon(data = dataset1(), aes(x=long, y = lat, group = group, fill = ccbio)) + 
+        geom_polygon(data = state_map, aes(x = long, y = lat, group = group), 
+                     fill = "gray80", color = "white", lwd = 0.2) +
         geom_polygon(data = dataset1(), aes(x=long, y = lat, group = group), fill = "gray80", color = "white", lwd = 0.5) + 
         geom_polygon(data = dataset2(),
-                     aes(x=long, 
-                         y = lat, 
-                         group = group, 
-                         #fill = ccbio_lbs
-                         ),
-                     color = "black",
-                     fill = "red",
+                     aes(x = long, y = lat, group = group),
+                     color = "black", # "mediumseagreen", #seagreen springgreen4
+                     fill = "gold1",
                      lwd = 1.5) +
-        geom_label(data = dataset3(), 
-                   aes(x = long, y = lat+0.5, label = paste0(ccbio_lbs, " lbs/ac")),
-                   size = 10) +
-        facet_grid(.~prob_nice) + 
-        #scale_fill_viridis_c(option = "magma") +
-        #scale_fill_gradient(low = "lightgreen", high = "green4") +
+      
+        #--bad year
+        geom_label(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
+                  aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                      y = lat + 0.5,
+                      x = long - 3,
+                      #size = ccbio_lbs
+                      ),
+                  #x = -94.5, 
+                  #x = -93.8, 
+                  #y = 43,
+                  size = 10,
+                  color = "red") +
+        geom_text(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
+                  label = "Unfavorable Year:",
+                  aes(y = lat + 0.8,
+                       x = long - 3,
+                       #size = ccbio_lbs
+                   ),
+                   #x = -94.5, 
+                   #x = -93.8, 
+                   #y = 43,
+                   size = 10,
+                   color = "red") +
+        #--avg year
+        geom_label(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
+                  aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                      y = lat + 0.5,
+                      x = long,
+                      #size = ccbio_lbs
+                      ),
+                  #x = -93.5, 
+                  #y = 42.5,
+                  size = 10,
+                  color = "black") +
+        geom_text(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
+                   label = "Average Year:",
+                   aes(y = lat + 0.8,
+                       x = long,
+                       #size = ccbio_lbs
+                   ),
+                   #x = -93.5, 
+                   #y = 42.5,
+                   size = 10,
+                   color = "black") +
+      #--good year
+      geom_label(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
+                aes(label = paste0(ccbio_lbs, " lbs/ac"),
+                    y = lat + 0.5,
+                    x = long + 3
+                    #size = ccbio_lbs
+                    ),
+                #x = -93, 
+                #y = 42,
+                size = 10,
+                color = "blue") +
+        geom_text(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
+                   label = "Favorable Year:",
+                   aes(y = lat + 0.8,
+                       x = long + 3
+                       #size = ccbio_lbs
+                   ),
+                   #x = -93, 
+                   #y = 42,
+                   size = 10,
+                   color = "blue") +
+        scale_size_continuous(range = c(5, 12)) +
         ggthemes::theme_few() + 
-        theme(legend.position = "top",
+        theme(legend.position = "left",
               panel.background = element_rect(fill = "white"),
               aspect.ratio = 0.8,
+              legend.text = element_text(size = rel(1.5)),
               axis.title = element_blank(),
               axis.ticks = element_blank(),
               axis.text = element_blank(),
               strip.text = element_text(size = rel(1.5), face = "bold"),
               plot.background = element_rect(fill = "transparent", colour = NA),
               panel.grid = element_blank(),
-              panel.border = element_blank()) +
-        guides(fill = F)
-      # guides(fill = guide_colorbar(title.position = "top",
-      #                              title.hjust = 0.5,
-      #                              barwidth = 20,
-      #                              barheight = 0.8))  
-      
+              panel.border = element_blank(),
+              plot.margin = margin(1, 1, 1, 1, "cm")
+              ) +
+        coord_quickmap(clip = "off") +
+        guides(size = F) 
       
       
     })
     
-    
+    output$table_sum <-
+      renderTable({
+        head(dataset3())
+      },
+      digits = 0,
+      align = "c",
+      width = '100%', height = '80%', res = 130)
     
 }
 
