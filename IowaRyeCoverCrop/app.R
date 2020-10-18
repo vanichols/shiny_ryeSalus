@@ -69,7 +69,14 @@ county_map <-
   as_tibble() %>% 
   filter(region == "iowa") %>% 
   mutate(subregion = str_to_title(subregion))
-  
+
+state_map <- 
+  map_data("state") %>% 
+  as_tibble() %>% 
+  filter(region %in% c("iowa", "illinois", "indiana", 
+                       "minnesota", "michigan", "wisconsin", "ohio")) %>% 
+  mutate(region = str_to_title(region))
+
 
 
 # Define UI for application that draws a histogram
@@ -118,10 +125,10 @@ ui <- fluidPage(
 
         
         h1("Cover Crop Biomass Production (lbs/ac)"),
-        h2("Values shown for:"),
-        h4("- unfavorable (red) years"),
-        h4("- average (black) years"),
-        h4("- favorable (blue) years"),
+        #h2("Values shown for:"),
+        #h4("- unfavorable (red) years"),
+        #h4("- average (black) years"),
+        #h4("- favorable (blue) years"),
         plotOutput('fig_sum')
                 
         # fluidRow(
@@ -197,7 +204,9 @@ server <- function(input, output) {
     output$fig_map_dist <- renderPlot({
         
       
-        ggplot() + 
+        ggplot() +
+        geom_polygon(data = state_map, aes(x = long, y = lat, group = group), 
+                     fill = "gray80", color = "white", lwd = 0.2) +
             geom_polygon(data = county_map, aes(x = long, y = lat, group = group), 
                          fill = "gray80", color = "white", lwd = 0.5) + 
             geom_polygon(data = dataset_map_dist(),
@@ -292,6 +301,8 @@ server <- function(input, output) {
       
       
       ggplot() + 
+        geom_polygon(data = state_map, aes(x = long, y = lat, group = group), 
+                     fill = "gray80", color = "white", lwd = 0.2) +
         geom_polygon(data = dataset1(), aes(x=long, y = lat, group = group), fill = "gray80", color = "white", lwd = 0.5) + 
         geom_polygon(data = dataset2(),
                      aes(x = long, y = lat, group = group),
