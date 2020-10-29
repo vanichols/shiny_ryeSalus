@@ -40,7 +40,7 @@ ccbio_dist <-
 
 #--dropdowns
 dd_county_dist <- ccbio_dist %>% select(subregion) %>% distinct() %>% pull() 
-
+dd_state_dist <- c("Iowa")
 
 #--------------------------------------------
 #--for summarised data
@@ -61,6 +61,9 @@ ccbio_sum <- read_csv("IA_ccbio-map.csv") %>%
 dd_county_sum <- ccbio_sum %>% select(subregion) %>% distinct() %>% pull() 
 dd_dop_sum <- ccbio_sum %>% select(dop2) %>% distinct() %>% pull()
 dd_dot_sum <- ccbio_sum %>% select(DOY2) %>% distinct() %>% pull()
+
+dd_state_sum <- c("Iowa")
+
 
 #--------------------------------------------
 #--map
@@ -92,57 +95,32 @@ ui <- fluidPage(
        
         fluidRow(
           #--first bit
-          column(9,
-                 fluidRow(
-                   column(12,
-                          includeMarkdown("desc_sum.md")),
+          column(4,
+                 includeMarkdown("desc_sum.md"),
                    br(),
-                   fluidRow(
-                     br(),
-                     column(3,
-                            selectizeInput(inputId = "county_sum", 
+                 selectizeInput(inputId = "state_sum", 
+                                label = "Choose a state:",
+                                selected = "Iowa",
+                                choices = dd_state_sum),  
+                 selectizeInput(inputId = "county_sum", 
                                 label = "Choose a county:",
                                 selected = "Story",
-                                choices = dd_county_sum)),
-                     column(3,
+                                choices = dd_county_sum),
                  selectizeInput(inputId = "dop_sum",
                                 label = "Choose a planting date:",
                                 selected = "Oct-7",
-                                choices = dd_dop_sum)),
-                 column(3,
+                                choices = dd_dop_sum),
                  selectizeInput(inputId = "dot_sum",
                                 label = "Choose a termination date:",
                                 selected = "Apr-15",
-                                choices = dd_dot_sum))
-                 ))),
-          column(3, 
-                 fluidRow(
-            column(12, 
-                 img(src = "popcan2.png", height = 300, width = 200)),
-            column(12,
-                   includeMarkdown("popcan.md"))))
-          ), 
-
+                                choices = dd_dot_sum),
+                 img(src = "popcan2.png", height = 300, width = 200),
+                 includeMarkdown("popcan.md")),
+             column(8,
         
-        h1("Cover Crop Biomass Production (lbs/ac)"),
-        #h2("Values shown for:"),
-        #h4("- unfavorable (red) years"),
-        #h4("- average (black) years"),
-        #h4("- favorable (blue) years"),
-        plotOutput('fig_sum')
-                
-        # fluidRow(
-        #   column(6,
-        #          plotOutput('fig_sum')),
-        #   column(6, 
-        #          br(),
-        #          br(),
-        #          br(),
-        #          h3("Cover Crop Biomass Production (lbs/ac)"),
-        #          tableOutput('table_sum'))
-        # )
-        
-        ),
+        #h1("Cover Crop Biomass Production (lbs/ac)"),
+        plotOutput('fig_sum', height = 1200, width = 800)
+        ))),
     #--end tab
     
     #--start tab
@@ -152,13 +130,17 @@ ui <- fluidPage(
       
       fluidRow(
         column(4,
+               selectizeInput(inputId = "state_dist", 
+                              label = "Choose a state:",
+                              selected = "Iowa",
+                              choices = dd_state_dist),  
                selectizeInput(inputId = "county_dist", 
                               label = "Choose a county:",
                               selected = "Story",
                               choices = dd_county_dist),
                includeMarkdown("desc.md")),
         column(4, 
-               plotOutput('fig_map_dist', width = 400, height = 350)),
+               plotOutput('fig_map_dist', width = 400, height = 600)),
         column(4, 
                fluidRow(
                  column(12, 
@@ -313,66 +295,49 @@ server <- function(input, output) {
         #--bad year
         geom_label(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
                   aes(label = paste0(ccbio_lbs, " lbs/ac"),
-                      y = lat + 0.5,
-                      x = long - 3,
+                      #y = lat + 1,
                       #size = ccbio_lbs
                       ),
-                  #x = -94.5, 
-                  #x = -93.8, 
-                  #y = 43,
+                  x = -94, 
+                  y = 46.2,
                   size = 10,
                   color = "red") +
         geom_text(data = dataset3() %>% filter(prob_nice == "In An Unfavorable Year"),
                   label = "Unfavorable Year:",
-                  aes(y = lat + 0.8,
-                       x = long - 3,
-                       #size = ccbio_lbs
-                   ),
-                   #x = -94.5, 
-                   #x = -93.8, 
-                   #y = 43,
+                   x = -94, 
+                   y = 47,
                    size = 10,
                    color = "red") +
         #--avg year
         geom_label(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
                   aes(label = paste0(ccbio_lbs, " lbs/ac"),
-                      y = lat + 0.5,
-                      x = long,
+                      #y = lat + 1,
                       #size = ccbio_lbs
                       ),
-                  #x = -93.5, 
-                  #y = 42.5,
+                  x = -89, 
+                  y = 46.2,
                   size = 10,
                   color = "black") +
         geom_text(data = dataset3() %>% filter(prob_nice == "In An Average Year"),
                    label = "Average Year:",
-                   aes(y = lat + 0.8,
-                       x = long,
-                       #size = ccbio_lbs
-                   ),
-                   #x = -93.5, 
-                   #y = 42.5,
+                   x = -89, 
+                   y = 47,
                    size = 10,
                    color = "black") +
       #--good year
       geom_label(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
                 aes(label = paste0(ccbio_lbs, " lbs/ac"),
-                    y = lat + 0.5,
-                    x = long + 3
+                    #y = lat + 1,
                     #size = ccbio_lbs
                     ),
-                #x = -93, 
-                #y = 42,
+                x = -84, 
+                y = 46.2,
                 size = 10,
                 color = "blue") +
         geom_text(data = dataset3() %>% filter(prob_nice == "In A Favorable Year"),
                    label = "Favorable Year:",
-                   aes(y = lat + 0.8,
-                       x = long + 3
-                       #size = ccbio_lbs
-                   ),
-                   #x = -93, 
-                   #y = 42,
+                   x = -84, 
+                   y = 47,
                    size = 10,
                    color = "blue") +
         scale_size_continuous(range = c(5, 12)) +
@@ -388,7 +353,7 @@ server <- function(input, output) {
               plot.background = element_rect(fill = "transparent", colour = NA),
               panel.grid = element_blank(),
               panel.border = element_blank(),
-              #plot.margin = margin(4, 4, 4, 4, "cm")
+              plot.margin = margin(1, 1, 1, 1, "cm")
               ) +
         coord_quickmap(clip = "off") +
         guides(size = F) 
