@@ -1,0 +1,12 @@
+name: MidwestRyeCoverCrop
+title: MidwestRyeCoverCrop
+username:
+account: vanichols
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3140958
+bundleId: 3808273
+url: https://vanichols.shinyapps.io/MidwestRyeCoverCrop/
+when: 1604274103.0403
+asMultiple: FALSE
+asStatic: FALSE
