@@ -83,7 +83,7 @@ for(i in 1:length(rawdataIA)){
 }
 
 
-#--split it up so I can push to github
+#--split it up so I can push to github? 
 term2$dop %>% unique()
 
 term2 %>% 

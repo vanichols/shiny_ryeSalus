@@ -6,23 +6,127 @@ library(maps)
 library(mapdata)
 library(ggridges)
 
+
+
+###############  IOWA ###########################
+
 #--summarised simulations
 term <- 
   read_csv("create_shiny_data/IA_ccbio.csv") %>% 
   pivot_longer(CWAD20:CWAD80, names_to = "prob", values_to = "ccbio") %>% 
   filter(DOY < 197) #--july 15 is ridiculous
 
-#--raw-ish sims
+#--raw-ish sims, I don't know where I made this rds. Maybe it's the combos? ANd I combined them?
 term2 <- 
   read_rds("create_shiny_data/IA_ccbio-raws.rds") %>% 
   filter(DOY < 197) #--july 15 is ridiculous
 
 
+#--Domain for simulations
+simdomain <-
+  data.frame(state = c("IA")) %>%
+  group_by(state) %>%
+  do(data = read.csv(paste0("assets/Raster_Counts/",.$state,"_combined_corn_county.csv"))) %>%
+  unnest(cols = c(data)) %>%
+  separate(key, c("SoilID","lat","long","fips"), sep = "_") %>%
+  mutate(Weatherfp = paste0(lat,"_",long)) %>%
+  filter(SoilID %in% readRDS("data/SoilIDs.rds")) %>%
+  group_by(lat,long,fips) %>%
+  summarise(area = sum(Count)*0.09) %>%
+  ungroup() %>%
+  mutate(lat = as.numeric(gsub("N","",lat)),
+         long = -as.numeric(gsub("W","",gsub(".wdb.xml","",long))),
+         fips = as.numeric(fips)) %>%
+  left_join(county.fips %>%
+              separate(polyname,c("region","subregion"), sep = ","))
+
+
+# Summarize data by county, probabilities
+term_county <- 
+  term %>%
+  left_join(simdomain) %>%
+  #group_by(region, subregion, prob, dop, fips) %>%
+  group_by(region, subregion, prob, dop, fips, DOY) %>%
+  summarise(area = sum(area),
+            ccbio = mean(ccbio)
+            ) %>%
+  filter(area > 30000) %>%
+  ungroup() %>%
+  mutate(dop2 = factor(dop, labels = c("Sep-15","Oct-7","Nov-1")),
+         DOY2 = factor(DOY, labels = c("Apr-1", "Apr-15", "May-1", "May-15", 
+                                       "Jun-1", "Jun-15", "Jul-1")))
+
+term_county
+
+#--data to make figure
+fig_dat <- 
+  map_data("county") %>%
+  left_join(term_county) %>%
+  as_tibble() %>% 
+  filter(!is.na(prob))
+
+fig_dat %>% write_csv("create_shiny_data/IA_ccbio-map.csv")
+
+
+
+#--raws, distributions of raws actually
+
+term2_county <- 
+  term2 %>%
+  left_join(simdomain) %>%
+  filter(!is.na(CWAD)) %>% 
+  rename("dot" = DOY)
+
+#--this file is too big to write by itself
+#term2_county %>% write_rds("create_shiny_data/IA_ccbio-map-raws-full.rds")
+
+#--could write one for each county? No. 
+
+#--get mean and sd of each distribution
+set.seed(123)
+term3_county <- 
+  term2_county %>% 
+  group_by(region, subregion, dop, dot) %>% 
+  summarise(CWAD_mean = mean(CWAD, na.rm = T),
+           CWAD_sd = sd(CWAD, na.rm = T)) %>% 
+  #--sample from a normal dist with those means/sds
+  nest(data = c(region, subregion, dop, dot)) %>% 
+  mutate(ccbio_kgha = map2(CWAD_mean, CWAD_sd, rnorm, n = 100)) %>% 
+  select(-CWAD_mean, -CWAD_sd) %>% 
+  unnest(cols = data) %>% 
+  unnest(cols = ccbio_kgha)
+
+#--how big is term3? 14 MB, maybe it's ok?
+
+term3_county %>% write_rds("create_shiny_data/IA_ccbio-map-raws.rds")
+
+
+
+###############  ILLIONOIS ###########################
+
+#--summarised simulations
+term <- 
+  read_csv("create_shiny_data/IL_ccbio.csv") %>% 
+  pivot_longer(CWAD20:CWAD80, names_to = "prob", values_to = "ccbio") %>% 
+  filter(DOY < 197) #--july 15 is ridiculous
+
+#--raw-ish sims
+d1 <- read_rds("create_shiny_data/IL_ccbio-raws-260.rds") 
+d2 <- read_rds("create_shiny_data/IL_ccbio-raws-280.rds")  
+d3 <- read_rds("create_shiny_data/IL_ccbio-raws-300.rds")  
+
+
+term2 <-
+  d1 %>%
+  bind_rows(d2) %>%
+  bind_rows(d3) %>%
+  filter(DOY < 197) #--july 15 is ridiculous
+
 
 
 # Domain for simulations
 simdomain <-
-  data.frame(state = c("IA")) %>%
+  data.frame(state = c("IL")) %>%
   group_by(state) %>%
   do(data = read.csv(paste0("assets/Raster_Counts/",.$state,"_combined_corn_county.csv"))) %>%
   unnest(cols = c(data)) %>%
@@ -50,11 +154,12 @@ term_county <-
   group_by(region, subregion, prob, dop, fips, DOY) %>%
   summarise(area = sum(area),
             ccbio = mean(ccbio)
-            ) %>%
+  ) %>%
   filter(area > 30000) %>%
   ungroup() %>%
   mutate(dop2 = factor(dop, labels = c("Sep-15","Oct-7","Nov-1")),
-         DOY2 = factor(DOY, labels = c("Apr-1", "Apr-15", "May-1", "May-15", "Jun-1", "Jun-15", "Jul-1", "Jul-15")))
+         DOY2 = factor(DOY, labels = c("Apr-1", "Apr-15", "May-1", "May-15", 
+                                       "Jun-1", "Jun-15", "Jul-1")))
 
 term_county
 
@@ -65,7 +170,7 @@ fig_dat <-
   as_tibble() %>% 
   filter(!is.na(prob))
 
-fig_dat %>% write_csv("create_shiny_data/IA_ccbio-map.csv")
+fig_dat %>% write_csv("create_shiny_data/IL_ccbio-map.csv")
 
 
 
@@ -83,11 +188,12 @@ term2_county <-
 #--could write one for each county? No. 
 
 #--get mean and sd of each distribution
+set.seed(123)
 term3_county <- 
   term2_county %>% 
   group_by(region, subregion, dop, dot) %>% 
   summarise(CWAD_mean = mean(CWAD, na.rm = T),
-           CWAD_sd = sd(CWAD, na.rm = T)) %>% 
+            CWAD_sd = sd(CWAD, na.rm = T)) %>% 
   #--sample from a normal dist with those means/sds
   nest(data = c(region, subregion, dop, dot)) %>% 
   mutate(ccbio_kgha = map2(CWAD_mean, CWAD_sd, rnorm, n = 100)) %>% 
@@ -97,7 +203,15 @@ term3_county <-
 
 #--how big is term3? 14 MB, maybe it's ok?
 
-term3_county %>% write_rds("create_shiny_data/IA_ccbio-map-raws.rds")
+term3_county %>% write_rds("create_shiny_data/IL_ccbio-map-raws.rds")
+
+
+
+
+
+
+
+
 
 # example maps ------------------------------------------------------------
 
