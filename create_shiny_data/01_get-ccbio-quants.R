@@ -75,6 +75,10 @@ quants_IN <- funGetQuants(rawdata, "IN")
 quants_IA <- funGetQuants(rawdata, "IA")
 quants_IL <- funGetQuants(rawdata, "IL")
 
+quants_IL <- funGetQuants(rawdata, "IL")
+quants_IL <- funGetQuants(rawdata, "IL")
+quants_IL <- funGetQuants(rawdata, "IL")
+
 quants_IN %>% write_csv("create_shiny_data/quants/IN_ccbio-quants.csv")
 quants_IA %>% write_csv("create_shiny_data/quants/IA_ccbio-quants.csv")
 quants_IL %>% write_csv("create_shiny_data/quants/IL_ccbio-quants.csv")
