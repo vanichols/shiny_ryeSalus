@@ -9,9 +9,9 @@ library(ggridges)
 
 
 
-quantIA <- read_csv("create_shiny_data/IA_ccbio-quants.csv")
-quantIL <- read_csv("create_shiny_data/IL_ccbio-quants.csv")
-quantIN <- read_csv("create_shiny_data/IN_ccbio-quants.csv")
+quantIA <- read_csv("create_shiny_data/quants/IA_ccbio-quants.csv")
+quantIL <- read_csv("create_shiny_data/quants/IL_ccbio-quants.csv")
+quantIN <- read_csv("create_shiny_data/quants/IN_ccbio-quants.csv")
 
 quants <- 
   quantIA %>% 
@@ -71,5 +71,7 @@ fig_dat <-
   as_tibble() %>% 
   filter(!is.na(prob))
 
-fig_dat %>% write_csv("create_shiny_data/ccbio-quants-by-county.csv")
+fig_dat %>% select(region) %>% pull() %>% unique()
+
+fig_dat %>% write_csv("MidwestRyeCoverCrop/ccbio_quants-map.csv")
 

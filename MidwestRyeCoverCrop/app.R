@@ -15,7 +15,7 @@ library(ggrepel)
 
 #--for summarised data
 #ccbio_raw <- read_csv("MidwestRyeCoverCrop/ccbio_map.csv")
-ccbio_raw <- read_csv("ccbio_map.csv")
+ccbio_raw <- read_csv("ccbio_quants-map.csv")
   
 ccbio_sum <- 
   ccbio_raw %>% 
@@ -32,10 +32,6 @@ ccbio_sum <-
          ccbio_lbs = round(ccbio * 2.2/2.47, -1)
   )
 
-#--why is illinois adams have decimals?
-ccbio_sum %>% 
-  filter(region == "Illinois",
-         subregion == "Adams") ->a
 
 #--dropdowns
 dd_dop_sum <- ccbio_sum %>% select(dop2) %>% distinct() %>% pull()
