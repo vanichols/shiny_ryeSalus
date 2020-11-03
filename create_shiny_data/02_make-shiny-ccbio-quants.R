@@ -12,11 +12,19 @@ library(ggridges)
 quantIA <- read_csv("create_shiny_data/quants/IA_ccbio-quants.csv")
 quantIL <- read_csv("create_shiny_data/quants/IL_ccbio-quants.csv")
 quantIN <- read_csv("create_shiny_data/quants/IN_ccbio-quants.csv")
+quantMI <- read_csv("create_shiny_data/quants/MI_ccbio-quants.csv")
+quantMN <- read_csv("create_shiny_data/quants/MN_ccbio-quants.csv")
+quantOH <- read_csv("create_shiny_data/quants/OH_ccbio-quants.csv")
+quantWI <- read_csv("create_shiny_data/quants/WI_ccbio-quants.csv")
 
 quants <- 
   quantIA %>% 
   bind_rows(quantIL) %>% 
-  bind_rows(quantIN)
+  bind_rows(quantIN) %>% 
+  bind_rows(quantMI) %>% 
+  bind_rows(quantMN) %>% 
+  bind_rows(quantOH) %>% 
+  bind_rows(quantWI)
 
 #--summarised simulations
 quants_l <- 
@@ -29,9 +37,9 @@ quants_l <-
 
 simdomain <-
   data.frame(state = c("IN","OH","MI",
-                       "ND","NE","KS",
-                       "IA","MN","WI",
-                       "SD","IL","MO")) %>%
+                       #"ND","NE","KS",
+                       "IA","MN","WI", "IL")) %>% 
+                       #"SD","IL","MO")) %>%
   group_by(state) %>%
   do(data = read.csv(paste0("assets/Raster_Counts/",.$state,"_combined_corn_county.csv"))) %>%
   unnest(cols = c(data)) %>%
@@ -69,7 +77,8 @@ fig_dat <-
   map_data("county") %>%
   left_join(quants_county) %>%
   as_tibble() %>% 
-  filter(!is.na(prob))
+  filter(!is.na(prob)) %>% 
+  filter()
 
 fig_dat %>% select(region) %>% pull() %>% unique()
 

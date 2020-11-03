@@ -71,15 +71,19 @@ for(i in 1:length(tmp.filelist)){
   
 }
 
-quants_IN <- funGetQuants(rawdata, "IN")
-quants_IA <- funGetQuants(rawdata, "IA")
-quants_IL <- funGetQuants(rawdata, "IL")
+#quants_IN <- funGetQuants(rawdata, "IN")
+#quants_IA <- funGetQuants(rawdata, "IA")
+#quants_IL <- funGetQuants(rawdata, "IL")
 
-quants_IL <- funGetQuants(rawdata, "IL")
-quants_IL <- funGetQuants(rawdata, "IL")
-quants_IL <- funGetQuants(rawdata, "IL")
+quants_MI <- funGetQuants(rawdata, "MI")
+quants_MI %>% write_csv("create_shiny_data/quants/MI_ccbio-quants.csv")
 
-quants_IN %>% write_csv("create_shiny_data/quants/IN_ccbio-quants.csv")
-quants_IA %>% write_csv("create_shiny_data/quants/IA_ccbio-quants.csv")
-quants_IL %>% write_csv("create_shiny_data/quants/IL_ccbio-quants.csv")
+quants_MN <- funGetQuants(rawdata, "MN")
+quants_MN %>% write_csv("create_shiny_data/quants/MN_ccbio-quants.csv")
+
+quants_OH <- funGetQuants(rawdata, "OH")
+quants_OH %>% write_csv("create_shiny_data/quants/OH_ccbio-quants.csv")
+
+quants_WI <- funGetQuants(rawdata, "WI")
+quants_WI %>% write_csv("create_shiny_data/quants/WI_ccbio-quants.csv")
 

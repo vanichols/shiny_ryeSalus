@@ -14,7 +14,7 @@ library(ggrepel)
 
 
 #--for summarised data
-#ccbio_raw <- read_csv("MidwestRyeCoverCrop/ccbio_map.csv")
+#ccbio_raw <- read_csv("MidwestRyeCoverCrop/ccbio_quants-map.csv")
 ccbio_raw <- read_csv("ccbio_quants-map.csv")
   
 ccbio_sum <- 
@@ -29,7 +29,7 @@ ccbio_sum <-
                                                   "In An Average Year",
                                                   "In An Unfavorable Year")),
          prob_nice = fct_rev(prob_nice),
-         ccbio_lbs = round(ccbio * 2.2/2.47, -1)
+         ccbio_lbs = round(ccbio * 2.2/2.47, -2)
   )
 
 
