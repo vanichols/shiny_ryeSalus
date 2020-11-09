@@ -10,6 +10,12 @@ output: html_document
 
 The data used to create this visualization was produced using the Systems Approach to Land-Use Sustainability (SALUS) model [(Basso and Ritchie, 2015)](https://lter.kbs.msu.edu/wp-content/uploads/2015/04/Basso-and-Ritchie-Ch10-Simulating-crop-growth-and-biogeochemical-fluxes-SALUS-model-KBS-long-term-ecological-research-LTER-site-volume-synthesis-book-2015.pdf) and is part of an open-access publication regarding the effects of cover cropping on weeds [(Nichols et al. 2020)](https://acsess.onlinelibrary.wiley.com/doi/full/10.1002/ael2.20022).
 
+# What does 'unfavorable year', etc. mean?
+Roughly:
+- Unfavorable: mean value from your worst years
+- Favorable: mean from your best years
+- Average: the overall mean 
+A more technical definition is that we built a distribution of the possible cover crop biomass values. The value of the 20% quantile was assigned as the 'unfavorable', the 50% quantile the 'average', and the 80% quantile the 'favorable'. 
 
 # More detailed model description
 
