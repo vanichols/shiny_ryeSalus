@@ -72,7 +72,7 @@ ui <- fluidPage(
                "Data Summaries",
                fluidRow(h1("How much cover crop biomass can I grow?")),
                fluidRow(
-                 column(2,
+                 column(3,
                         includeMarkdown("desc_sum.md"),
                         selectizeInput(inputId = "state_sum", 
                                        label = "Choose a state:",
@@ -92,7 +92,7 @@ ui <- fluidPage(
                                        choices = dd_dot_sum)),
                  column(4,
                         plotOutput('fig_map', height = '60%', width = '100%')),
-                 column(6,
+                 column(5,
                         plotOutput('fig_sum', height = '60%', width = '100%'))
                )
              ),
@@ -106,7 +106,17 @@ ui <- fluidPage(
                         includeMarkdown("about.md")
                  )
                )
-             )
+             ),
+             #--end tab
+             #--start tab
+             tabPanel(
+               "Pop Can",
+               fluidRow(
+                 column(12,
+                        includeMarkdown("popcan.md"),
+                        img(src = "popcan2.png", height = 700, width = 500))
+                 )
+               )
              #--end tab
              
   )
@@ -195,7 +205,7 @@ server <- function(input, output, session) {
     ggplot(data = dataset3(),
            aes(x = prob_nice, y = ccbio_lbs)) + 
       geom_col(aes(fill = prob_nice), color = "black", size = 1.2) + 
-      scale_fill_manual(values = c("red", "gray", "blue")) + 
+      scale_fill_manual(values = c("red", "green3", "blue")) + 
       geom_hline(yintercept = 2000, linetype = "dashed") +
       geom_text(aes(x = prob_nice, y = ccbio_lbs + 200, label = ccbio_lbs), size = 8) +
       guides(fill = F) +
@@ -203,6 +213,7 @@ server <- function(input, output, session) {
            y = NULL,
            title = "Cover Crop Biomass (lbs/ac)") + 
       theme_bw() +
+      coord_cartesian(ylim = c(0, 6000)) +
       theme(axis.text = element_text(size = rel(1.5)),
             plot.title = element_text(hjust = 0.5, size = rel(2))) 
     

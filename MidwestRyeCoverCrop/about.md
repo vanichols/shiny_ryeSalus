@@ -15,7 +15,8 @@ Roughly:
 - Unfavorable: mean value from your worst years
 - Favorable: mean from your best years
 - Average: the overall mean 
-A more technical definition is that we built a distribution of the possible cover crop biomass values. The value of the 20% quantile was assigned as the 'unfavorable', the 50% quantile the 'average', and the 80% quantile the 'favorable'. 
+
+A more technical definition: we built a distribution of the possible cover crop biomass values. The value of the 20% quantile was assigned as the 'unfavorable', the 50% quantile the 'average', and the 80% quantile the 'favorable' values. 
 
 # More detailed model description
 
