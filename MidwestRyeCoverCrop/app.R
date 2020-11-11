@@ -70,7 +70,7 @@ ui <- fluidPage(
              #--start tab
              tabPanel(
                "Data Summaries",
-               fluidRow(h1("How much cover crop biomass can I grow?")),
+               fluidRow(h1("How much rye biomass can I grow?")),
                fluidRow(
                  column(3,
                         includeMarkdown("desc_sum.md"),
@@ -83,11 +83,11 @@ ui <- fluidPage(
                                        selected = "Adair",
                                        choices = dd_county_sum),
                         selectizeInput(inputId = "dop_sum",
-                                       label = "Choose a planting date:",
+                                       label = "Choose a rye planting date:",
                                        selected = "Oct-7",
                                        choices = dd_dop_sum),
                         selectizeInput(inputId = "dot_sum",
-                                       label = "Choose a termination date:",
+                                       label = "Choose a rye termination date:",
                                        selected = "Apr-15",
                                        choices = dd_dot_sum)),
                  column(4,
@@ -211,7 +211,7 @@ server <- function(input, output, session) {
       guides(fill = F) +
       labs(x = NULL,
            y = NULL,
-           title = "Cover Crop Biomass (lbs/ac)") + 
+           title = "Rye Cover Crop Biomass (lbs/ac)") + 
       theme_bw() +
       coord_cartesian(ylim = c(0, 6000)) +
       theme(axis.text = element_text(size = rel(1.5)),
