@@ -41,36 +41,6 @@ dd_dot_sum <- ccbio_sum %>% select(DOY2) %>% distinct() %>% pull()
 dd_county_sum <- ccbio_sum %>% select(subregion) %>% distinct() %>% pull() 
 dd_state_sum <- ccbio_sum %>% select(region) %>% distinct() %>% pull() 
 
-##--practice fig
-
-ccbio_sum %>% 
-  filter(region == "Iowa", subregion == "Story", dop == 260) %>% 
-  filter(prob_nice != "Average Year") %>% 
-  select(region, subregion, dop2, DOY2, prob_nice, ccbio_lbs) %>%
-  distinct() %>% 
-  pivot_wider(names_from = prob_nice, values_from = ccbio_lbs) %>% 
-  mutate(DOY2 = fct_rev(fct_inorder(DOY2))) %>% 
-  ggplot() + 
-  geom_point(aes(x = `Unfavorable Year`, y = DOY2), color = "red3") +
-  geom_point(aes(x = `Favorable Year`, y = DOY2), color = "blue4") +
-  geom_segment(aes(x = `Unfavorable Year`, xend = `Favorable Year`, 
-                   y = DOY2, yend = DOY2))
-
-
-ccbio_sum %>% 
-  filter(region == "Iowa", subregion == "Story", dop == 260) %>% 
-  filter(prob_nice != "Average Year") %>% 
-  select(region, subregion, dop2, DOY2, prob_nice, ccbio_lbs) %>%
-  distinct() %>% 
-  pivot_wider(names_from = prob_nice, values_from = ccbio_lbs) %>% 
-  mutate(DOY2 = fct_rev(fct_inorder(DOY2))) %>% 
-  ggplot() + 
-  geom_link(aes(x = `Unfavorable Year`, xend = `Favorable Year`, 
-                y = DOY2, yend = DOY2, 
-                colour = stat(index)), lineend = "round", size = 5
-            ) +
-  scale_colour_gradient(low = "red", high = "blue4") 
-  
 
 #--------------------------------------------
 #--map
@@ -99,7 +69,7 @@ ui <- fluidPage(
              
              #--start tab
              tabPanel(
-               "Data Summaries",
+               "Biomass Ranges",
                fluidRow(h1("How much rye biomass can I grow?")),
                fluidRow(
                  column(3,
@@ -116,10 +86,6 @@ ui <- fluidPage(
                                        label = "Choose a rye planting date:",
                                        selected = "Oct-7",
                                        choices = dd_dop_sum)
-                        # selectizeInput(inputId = "dot_sum",
-                        #                label = "Choose a rye termination date:",
-                        #                selected = "Apr-15",
-                        #                choices = dd_dot_sum)
                         ),
                  column(4,
                         plotOutput('fig_map', height = '60%', width = '100%')),
@@ -238,14 +204,16 @@ server <- function(input, output, session) {
       geom_link(aes(x = `Unfavorable Year`, xend = `Favorable Year`, 
                          y = DOY2, yend = DOY2, 
                          colour = stat(index)), lineend = "round", size = 10) +
-      scale_colour_gradient(low = "red", high = "blue4") +
+      scale_colour_gradient(low = "blue", high = "red") +
       geom_vline(xintercept = 2000, linetype = "dashed") +
       guides(color = F) +
-      labs(y = "Rye Termination Date",
-           x = "Rye Cover Crop Biomass (lbs/ac)") + 
+      labs(title = "Potential Biomass Production\nby Rye Termination Date",
+           x = "Rye Cover Crop Biomass (lbs/ac)",
+           y = NULL) + 
       theme_bw() +
       theme(axis.text = element_text(size = rel(1.5)),
-            axis.title = element_text(size = rel(2))) 
+            axis.title = element_text(size = rel(2)),
+            plot.title = element_text(hjust = 0.5, size = rel(2))) 
     
   }, height = 500, width = 500)
   
