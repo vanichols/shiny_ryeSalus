@@ -10,6 +10,7 @@ library(maps)
 library(shinythemes)
 library(extrafont)
 library(ggrepel)
+library(ggforce)
 
 
 
@@ -40,7 +41,36 @@ dd_dot_sum <- ccbio_sum %>% select(DOY2) %>% distinct() %>% pull()
 dd_county_sum <- ccbio_sum %>% select(subregion) %>% distinct() %>% pull() 
 dd_state_sum <- ccbio_sum %>% select(region) %>% distinct() %>% pull() 
 
+##--practice fig
 
+ccbio_sum %>% 
+  filter(region == "Iowa", subregion == "Story", dop == 260) %>% 
+  filter(prob_nice != "Average Year") %>% 
+  select(region, subregion, dop2, DOY2, prob_nice, ccbio_lbs) %>%
+  distinct() %>% 
+  pivot_wider(names_from = prob_nice, values_from = ccbio_lbs) %>% 
+  mutate(DOY2 = fct_rev(fct_inorder(DOY2))) %>% 
+  ggplot() + 
+  geom_point(aes(x = `Unfavorable Year`, y = DOY2), color = "red3") +
+  geom_point(aes(x = `Favorable Year`, y = DOY2), color = "blue4") +
+  geom_segment(aes(x = `Unfavorable Year`, xend = `Favorable Year`, 
+                   y = DOY2, yend = DOY2))
+
+
+ccbio_sum %>% 
+  filter(region == "Iowa", subregion == "Story", dop == 260) %>% 
+  filter(prob_nice != "Average Year") %>% 
+  select(region, subregion, dop2, DOY2, prob_nice, ccbio_lbs) %>%
+  distinct() %>% 
+  pivot_wider(names_from = prob_nice, values_from = ccbio_lbs) %>% 
+  mutate(DOY2 = fct_rev(fct_inorder(DOY2))) %>% 
+  ggplot() + 
+  geom_link(aes(x = `Unfavorable Year`, xend = `Favorable Year`, 
+                y = DOY2, yend = DOY2, 
+                colour = stat(index)), lineend = "round", size = 5
+            ) +
+  scale_colour_gradient(low = "red", high = "blue4") 
+  
 
 #--------------------------------------------
 #--map
@@ -85,11 +115,12 @@ ui <- fluidPage(
                         selectizeInput(inputId = "dop_sum",
                                        label = "Choose a rye planting date:",
                                        selected = "Oct-7",
-                                       choices = dd_dop_sum),
-                        selectizeInput(inputId = "dot_sum",
-                                       label = "Choose a rye termination date:",
-                                       selected = "Apr-15",
-                                       choices = dd_dot_sum)),
+                                       choices = dd_dop_sum)
+                        # selectizeInput(inputId = "dot_sum",
+                        #                label = "Choose a rye termination date:",
+                        #                selected = "Apr-15",
+                        #                choices = dd_dot_sum)
+                        ),
                  column(4,
                         plotOutput('fig_map', height = '60%', width = '100%')),
                  column(5,
@@ -129,37 +160,23 @@ server <- function(input, output, session) {
   #-------------------summaries---------------------
   
   #--puts counties in selected state
-  dataset1 <- reactive({
+  dmap1 <- reactive({
     ccbio_sum %>% 
       filter(dop2 == input$dop_sum,
-             DOY2 == input$dot_sum,
-             region == input$state_sum)
+             #DOY2 == input$dot_sum,
+             region == input$state_sum) %>% 
+      distinct()
   })
   
   #--highlights the selected county
-  dataset2 <- reactive({
+  dmap2 <- reactive({
     ccbio_sum %>% 
       filter(dop2 == input$dop_sum,
-             DOY2 == input$dot_sum,
-             region == input$state_sum,
-             subregion == input$county_sum)
-  })
-  
-  #--displays mean values for that county(?)
-  dataset3 <- reactive({
-    ccbio_sum %>% 
-      filter(dop2 == input$dop_sum,
-             DOY2 == input$dot_sum,
+             #DOY2 == input$dot_sum,
              region == input$state_sum,
              subregion == input$county_sum) %>% 
-      group_by(prob_nice) %>% 
-      summarise(long = mean(long),
-                lat = mean(lat),
-                ccbio_lbs = round(mean(ccbio_lbs, na.rm = T), -1)) %>% 
       distinct()
-    
   })
-  
   
   
   output$fig_map <- renderPlot({
@@ -169,10 +186,10 @@ server <- function(input, output, session) {
     ggplot() + 
       geom_polygon(data = state_map, aes(x = long, y = lat, group = group), 
                    fill = "gray80", color = "white", lwd = 0.2) +
-      geom_polygon(data = dataset1(), 
+      geom_polygon(data = dmap1(), 
                    aes(x=long, y = lat, group = group), 
                    fill = "gray80", color = "white", lwd = 0.5) + 
-      geom_polygon(data = dataset2(),
+      geom_polygon(data = dmap2(),
                    aes(x = long, y = lat, group = group),
                    color = "black", # "mediumseagreen", #seagreen springgreen4
                    fill = "gold1",
@@ -200,27 +217,39 @@ server <- function(input, output, session) {
   }, height = 500, width = 500)
   
   
+  
+  dsum1 <- reactive({
+    ccbio_sum %>% 
+      filter(dop2 == input$dop_sum,
+             region == input$state_sum,
+             subregion == input$county_sum) %>% 
+      filter(prob_nice != "Average Year") %>% 
+      select(region, subregion, dop2, DOY2, prob_nice, ccbio_lbs) %>%
+      distinct() %>% 
+      pivot_wider(names_from = prob_nice, values_from = ccbio_lbs) %>% 
+      mutate(DOY2 = fct_rev(fct_inorder(DOY2))) 
+    
+  })
+  
+ 
   output$fig_sum <- renderPlot({
     
-    ggplot(data = dataset3(),
-           aes(x = prob_nice, y = ccbio_lbs)) + 
-      geom_col(aes(fill = prob_nice), color = "black", size = 1.2) + 
-      scale_fill_manual(values = c("red", "green3", "blue")) + 
-      geom_hline(yintercept = 2000, linetype = "dashed") +
-      geom_text(aes(x = prob_nice, y = ccbio_lbs + 200, label = ccbio_lbs), size = 8) +
-      guides(fill = F) +
-      labs(x = NULL,
-           y = NULL,
-           title = "Rye Cover Crop Biomass (lbs/ac)") + 
+    ggplot(data = dsum1()) +
+      geom_link(aes(x = `Unfavorable Year`, xend = `Favorable Year`, 
+                         y = DOY2, yend = DOY2, 
+                         colour = stat(index)), lineend = "round", size = 10) +
+      scale_colour_gradient(low = "red", high = "blue4") +
+      geom_vline(xintercept = 2000, linetype = "dashed") +
+      guides(color = F) +
+      labs(y = "Rye Termination Date",
+           x = "Rye Cover Crop Biomass (lbs/ac)") + 
       theme_bw() +
-      coord_cartesian(ylim = c(0, 6000)) +
       theme(axis.text = element_text(size = rel(1.5)),
-            plot.title = element_text(hjust = 0.5, size = rel(2))) 
-    
+            axis.title = element_text(size = rel(2))) 
     
   }, height = 500, width = 500)
   
-  # Refresh county choices for a state selection (not working)
+  # Refresh county choices for a state selection (not working?)
   observe({
     
     mystate <- input$state_sum
