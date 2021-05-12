@@ -41,5 +41,7 @@ For questions regarding the simulations you can email Rafa Martinez-Feria at: ma
 
 # More detailed model description
 
-A complete model description is available [here](https://github.com/vanichols/shiny_ryeSalus/blob/master/IowaRyeCoverCrop/SALUS-simulation-details.pdf). It is described briefly below.
+A complete model description is available [here](https://github.com/vanichols/shiny_ryeSalus/blob/master/IowaRyeCoverCrop/SALUS-simulation-details.pdf).
 
+# Funding
+This material is based upon work that is supported by the National Institute of Food and Agriculture, U.S. Department of Agriculture, under award number 2017-38640-26916 through the North Central Region SARE program under project number GNC18-266. USDA is an equal opportunity employer and service provider. Any opinions, findings, conclusions, or recommendations expressed in this publication are those of the author(s) and do not necessarily reflect the view of the U.S. Department of Agriculture.
