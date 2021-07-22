@@ -5,6 +5,9 @@ date: "9/22/2020"
 output: html_document
 ---
 
+# You can cite this tools using the following:
+
+*V. Nichols and R. Martinez-Feria. Midwest Cover Crop Biomass Explorer. Web Application Released 2020. https://vanichols.shinyapps.io/MidwestRyeCoverCrop/*
 
 # This is simulated data
 
@@ -14,7 +17,7 @@ The data used to create this visualization was produced using the Systems Approa
 
 Inputs to the model included:
 - ⛅ incoming solar radiation (MJ m−2)
-- 🌡️maximum and minimum air temperature (°C)
+- 🌡️ maximum and minimum air temperature (°C)
 - 🌧️ rainfall (mm)
 - 🐛 soil characteristics
 - 🚜 management 
@@ -39,7 +42,7 @@ Simulation for each experiment were run independently, from 1-Jan to 30-Jun of t
 For questions regarding the visualizations you can email Gina Nichols at: vnichols (replace this with at) iastate.edu
 For questions regarding the simulations you can email Rafa Martinez-Feria at: mart2225 (replace this with at) msu.edu
 
-# More detailed model description
+## More detailed model description
 
 A complete model description is available [here](https://github.com/vanichols/shiny_ryeSalus/blob/master/IowaRyeCoverCrop/SALUS-simulation-details.pdf).
 

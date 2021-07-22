@@ -5,9 +5,9 @@ account: vanichols
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3140958
-bundleId: 4591827
+bundleId: 4843974
 url: https://vanichols.shinyapps.io/MidwestRyeCoverCrop/
-when: 1620855757.60856
-lastSyncTime: 1620855757.60856
+when: 1626922883.92411
+lastSyncTime: 1626922883.92411
 asMultiple: FALSE
 asStatic: FALSE
